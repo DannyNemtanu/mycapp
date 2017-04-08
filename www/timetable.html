@@ -1,0 +1,33 @@
+
+<!-- Dynamic navbar for iOS theme -->
+{{#if @global.ios}}
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="left">
+      <a href="#" class="link icon-only open-panel"><i class="fa fa-bars"></i></a>
+    </div>
+    <div class="center sliding">Timetable</div>
+  </div>
+</div>
+{{/if}}
+
+<div class="page" data-page="timetable">
+    <!-- Fixed navbar for Material theme -->
+    {{#if @global.material}}
+      <div class="navbar">
+        <div class="navbar-inner">
+          <div class="left">
+            <a href="#" class="link icon-only open-panel"><i class="fa fa-bars"></i></a>
+          </div>
+        <div class="center sliding">Timetable</div>
+      </div>
+    </div>
+    {{/if}}
+
+    <div class="page-content page-timetable">
+      <div class="content-block">
+        <h1>Welcome to Timetable Page</h1>
+
+      </div>
+    </div>
+</div>
