@@ -94,4 +94,7 @@
     <preference name="FadeSplashScreenDuration" value="300" />
     <preference name="phonegap-version" value="cli-6.1.0" />
     <preference name="Orientation" value="all" />
+    <feature name="Geolocation">
+        <param name="ios-package" value="CDVLocation" />
+    </feature>
 </widget>
