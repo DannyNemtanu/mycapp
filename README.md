@@ -1,4 +1,4 @@
-# Sample of college Application ( MYC App ) Created by The Panthers Team
+# Star Track
 
 A PhoneGap example app using [Framework7 HTML Framework](http://framework7.io/) and the [Spotify API](https://developer.spotify.com/web-api/).
 
