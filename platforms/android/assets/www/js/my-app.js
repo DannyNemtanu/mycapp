@@ -206,9 +206,8 @@ function playbackControlsClickHandler(e) {
   monitorMediaPreviewCurrentPosition();
   mediaPreview.stop();
   setPlaybackControlsStatus('stopped');
-  return;
-};
 
+}
 function setPlaybackControlsStatus(status) {
   var allButtons = $$('.playback-controls a');
   var playButton = $$('.playback-controls .play-button');
