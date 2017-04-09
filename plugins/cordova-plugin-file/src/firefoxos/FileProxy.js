@@ -423,7 +423,7 @@ QUIRKS:
         if (/\%5/g.test(path)) {
             path = decodeURI(path);
         }
-
+        var xhr;
         if (path.indexOf(pathsPrefix.dataDirectory) === 0) {
             path = path.substring(pathsPrefix.dataDirectory.length - 1);
 
@@ -442,8 +442,7 @@ QUIRKS:
             }, errorCallback, [LocalFileSystem.TEMPORARY]);
         } else if (path.indexOf(pathsPrefix.applicationDirectory) === 0) {
             path = path.substring(pathsPrefix.applicationDirectory.length);
-
-            var xhr = new XMLHttpRequest();
+            xhr = new XMLHttpRequest();
             xhr.open("GET", path, true);
             xhr.onreadystatechange = function () {
                 if (xhr.status === 200 && xhr.readyState === 4) {

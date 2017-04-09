@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.phonegap.helloworld" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget android-versionCode="1" id="com.phonegap.MYCapp" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <preference name="loglevel" value="DEBUG" />
     <feature name="Whitelist">
         <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
@@ -37,10 +37,10 @@
     <splash density="port-xhdpi" src="res/screen/android/drawable-port-xhdpi/screen.png" />
     <name>mycapp</name>
     <description>
-        A basic Framework7 Media App for PhoneGap.
+New app Phonegap
     </description>
     <author email="tommy@devgeeks.org" href="http://phonegap.com">
-        Adobe PhoneGap Team
+        The Panthers Team
     </author>
     <content src="index.html" />
     <access origin="*" />
@@ -54,4 +54,6 @@
     <preference name="StatusBarStyle" value="default" />
     <preference name="FadeSplashScreenDuration" value="300" />
     <preference name="phonegap-version" value="cli-6.1.0" />
+    <preference name="Fullscreen" value="True" />
+    <vs:toolsetVersion xmlns:vs="http://schemas.microsoft.com/appx/2014/htmlapps">6.3.1</vs:toolsetVersion>
 </widget>

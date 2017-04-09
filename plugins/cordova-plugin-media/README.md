@@ -77,9 +77,6 @@ Report issues with this plugin on the [Apache Cordova issue tracker](https://iss
 __NOTE__: `cdvfile` path is supported as `src` parameter:
 ```javascript
 var my_media = new Media('cdvfile://localhost/temporary/recording.mp3', ...);
-
-
-
 ```
 
 ### Constants

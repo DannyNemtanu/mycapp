@@ -273,7 +273,7 @@
         
             // History
             view.history = [];
-            var viewURL = docLocation;
+            var viewUrl = docLocation;
             var pushStateSeparator = app.params.pushStateSeparator;
             var pushStateRoot = app.params.pushStateRoot;
             if (app.params.pushState && view.main) {
@@ -1242,7 +1242,7 @@
         
             // Enable/disalbe
             s.enable = function (e) {
-                function _enable() {
+                function enable() {
                     if ((s.searchList.length || s.params.customSearch) && !s.container.hasClass('searchbar-active') && !s.query) s.overlay.addClass('searchbar-overlay-active');
                     s.container.addClass('searchbar-active');
                     if (s.cancelButton.length > 0 && !s.material) {
@@ -1272,7 +1272,7 @@
                 if (s.searchList.length || s.params.customSearch) s.overlay.removeClass('searchbar-overlay-active');
         
                 s.active = false;
-                function _disable() {
+                function disable() {
                     s.input.blur();
                 }
                 if (app.device.ios) {
@@ -1640,7 +1640,7 @@
         app.xhr = false;
         app.get = function (url, view, ignoreCache, callback) {
             // should we ignore get params or not
-            var _url = url;
+            var url = url;
             if (app.params.cacheIgnoreGetParameters && url.indexOf('?') >= 0) {
                 _url = url.split('?')[0];
             }
@@ -2190,13 +2190,13 @@
             template7Render: function (view, options) {
                 var url = options.url,
                     content = options.content, //initial content
-                    t7_rendered_content = options.content, // will be rendered using Template7
+                    t7Rendered_content = options.content, // will be rendered using Template7
                     context = options.context, // Context data for Template7
                     contextName = options.contextName,
                     template = options.template, // Template 7 compiled template
                     pageName = options.pageName;
         
-                var t7_ctx, t7_template;
+                var t7ctx, t7_template;
                 if (typeof content === 'string') {
                     if (url) {
                         if (app.template7Cache[url] && !options.ignoreCache) t7_template = t7.cache[url];
@@ -2903,7 +2903,7 @@
                         history.back();
                     }
                 }
-
+                return;
             }
         
             // Simple go back when we have pages on left
@@ -2947,7 +2947,7 @@
                 if (content) {
                     parseNewPage();
                     setPages();
-
+                    return;
                 }
                 else if (pageName) {
                     // Get dom cached pages
@@ -2962,11 +2962,11 @@
                         }
                     }
                     setPages();
-
+                    return;
                 }
                 else {
                     view.allowPageChange = true;
-
+                    return;
                 }
             }
             else {
@@ -2978,7 +2978,7 @@
                 if (content) {
                     parseNewPage();
                     setPages();
-
+                    return;
                 }
                 else if (pageName && view.params.domCache) {
                     if (pageName) url = '#' + pageName;
@@ -2997,11 +2997,11 @@
                         }
                     }
                     setPages();
-
+                    return;
                 }
                 else {
                     view.allowPageChange = true;
-
+                    return;
                 }
             }
         
@@ -3090,7 +3090,7 @@
                 }
             }
             view.allowPageChange = true;
-
+            return;
         };
         
         app.router.afterBack = function (view, oldPage, newPage) {
@@ -3927,7 +3927,7 @@
                 progressbar.remove();
                 progressbar = null;
             });
-
+            return;
         };
         app.initPageProgressbar = function (pageContainer) {
             pageContainer = $(pageContainer);
@@ -6274,7 +6274,7 @@
                     pullStarted = false;
                     container.removeClass('pull-up pull-down');
                     refresh = false;
-
+                    return;
                 }
             }
             function handleTouchEnd(e) {
@@ -9992,11 +9992,11 @@
                 if (!p.opened || p.inline) return;
                 if (inPopover()) {
                     app.closeModal(p.popover);
-
+                    return;
                 }
                 else {
                     app.closeModal(p.container);
-
+                    return;
                 }
             };
         
@@ -10990,11 +10990,11 @@
                 if (!p.opened || p.inline) return;
                 if (inPopover()) {
                     app.closeModal(p.popover);
-
+                    return;
                 }
                 else {
                     app.closeModal(p.container);
-
+                    return;
                 }
             };
         

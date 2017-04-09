@@ -1,6 +1,6 @@
-# Star Track
+# MYCapp
 
-A PhoneGap example app using [Framework7 HTML Framework](http://framework7.io/) and the [Spotify API](https://developer.spotify.com/web-api/).
+THe Team Panther Cordova App
 
 ## Previewing the app
 
