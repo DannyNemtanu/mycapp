@@ -92,49 +92,51 @@ $$(document).on('click', '.panel .news-link', function searchLink() {
 
 $$(document).on('click', '.panel .timetable-link', function searchLink() {
   // @TODO fetch the favorites (if any) from localStorage
-  var timetablePage = $$('.page[data-page=timetable]');
-  if (timetablePage.hasClass('cached')) {
-    mainView.router.load({
-      pageName: 'timetable',
-      animatePages: false,
-      reload: true,
-    });
-  }
+  var favorites = JSON.parse(localStorage.getItem('timetable'));
+  mainView.router.load({
+    template: myApp.templates.timetable,
+    animatePages: false,
+    context: {
+      tracks: timetable,
+    },
+    reload: true,
+  });
 });
-
 $$(document).on('click', '.panel .grades-link', function searchLink() {
   // @TODO fetch the favorites (if any) from localStorage
-  var gradesPage = $$('.page[data-page=grades]');
-  if (gradesPage.hasClass('cached')) {
-    mainView.router.load({
-      pageName: 'grades',
-      animatePages: false,
-      reload: true,
-    });
-  }
+  var favorites = JSON.parse(localStorage.getItem('grades'));
+  mainView.router.load({
+    template: myApp.templates.grades,
+    animatePages: false,
+    context: {
+      tracks: grades,
+    },
+    reload: true,
+  });
 });
-
 $$(document).on('click', '.panel .library-link', function searchLink() {
-  var libraryPage = $$('.page[data-page=library]');
-  if (libraryPage.hasClass('cached')) {
-    mainView.router.load({
-      pageName: 'library',
-      animatePages: false,
-      reload: true,
-    });
-  }
+  // @TODO fetch the favorites (if any) from localStorage
+  var favorites = JSON.parse(localStorage.getItem('library'));
+  mainView.router.load({
+    template: myApp.templates.library,
+    animatePages: false,
+    context: {
+      tracks: library,
+    },
+    reload: true,
+  });
 });
-
 $$(document).on('click', '.panel .support-link', function searchLink() {
   // @TODO fetch the favorites (if any) from localStorage
-  var supportPage = $$('.page[data-page=support]');
-  if (supportPage.hasClass('cached')) {
-    mainView.router.load({
-      pageName: 'support',
-      animatePages: false,
-      reload: true,
-    });
-  }
+  var favorites = JSON.parse(localStorage.getItem('support'));
+  mainView.router.load({
+    template: myApp.templates.support,
+    animatePages: false,
+    context: {
+      tracks: support,
+    },
+    reload: true,
+  });
 });
 
 /**

@@ -42,7 +42,7 @@ body {
 .material .page .page-content .content-block-title:first-of-type,
 .material .page .page-content .card:first-of-type,
 .material .page .page-content .content-block:first-of-type {
-  margin-top: 56px;
+  margin-top: 78px;
 }
 
 /* Fix for checkbox and radio titles in material */
@@ -194,6 +194,3 @@ body {
   max-height: 40%;
   overflow: hidden;
 }
-
-
-/*Timetable Page*/

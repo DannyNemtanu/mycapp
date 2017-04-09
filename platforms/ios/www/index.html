@@ -21,7 +21,8 @@
   <meta name="format-detection" content="telephone=no">
   <meta name="msapplication-tap-highlight" content="no">
   <link rel="stylesheet" href="lib/font-awesome-4.5.0/css/font-awesome.min.css" />
-  <title>MYC App</title>
+
+  <title>Star Track</title>
 </head>
 
 <body class="theme-green">
@@ -37,35 +38,35 @@
     <div class="list-block">
       <ul>
         <li>
-          <a href="timetable.html" class="timetable-link item-content list-panel-all close-panel item-link">
+          <a href="test.html" class="timetable-link item-content list-panel-all close-panel item-link">
             <div class="item-inner">
               <div class="item-title">Timetable</div>
             </div>
           </a>
         </li>
         <li>
-          <a href="grades.html" class="grades-link item-content list-panel-all close-panel item-link">
+          <a href="#" class="grades-link item-content list-panel-all close-panel item-link">
             <div class="item-inner">
               <div class="item-title">Grades</div>
             </div>
           </a>
         </li>
         <li>
-          <a href="news.html" class="news-link item-content list-panel-all close-panel item-link">
+          <a href="#" class="news-link item-content list-panel-all close-panel item-link">
             <div class="item-inner">
               <div class="item-title">News</div>
             </div>
           </a>
         </li>
         <li>
-          <a href="library.html" class="library-link item-content list-panel-all close-panel item-link">
+          <a href="#" class="library-link item-content list-panel-all close-panel item-link">
             <div class="item-inner">
               <div class="item-title">Library</div>
             </div>
           </a>
         </li>
         <li>
-          <a href="support.html" class="support-link item-content list-panel-all close-panel item-link">
+          <a href="#" class="support-link item-content list-panel-all close-panel item-link">
             <div class="item-inner">
               <div class="item-title">Support</div>
             </div>
@@ -163,20 +164,184 @@
       </div>
     </div>
   </div>
+  <!-- Timetable -->
+  <script type="text/template7" id="timetable">
+    <!-- Dynamic navbar for iOS theme -->
+    {{#if @global.ios}}
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="left">
+          <a href="#" class="link icon-only open-panel"><i class="fa fa-bars"></i></a>
+        </div>
+        <div class="center sliding">Timetable</div>
+      </div>
+    </div>
+    {{/if}}
 
+    <div class="page" data-page="timetable">
+        <!-- Fixed navbar for Material theme -->
+        {{#if @global.material}}
+          <div class="navbar">
+            <div class="navbar-inner">
+              <div class="left">
+                <a href="#" class="link icon-only open-panel"><i class="fa fa-bars"></i></a>
+              </div>
+            <div class="center sliding">Timetable</div>
+          </div>
+        </div>
+        {{/if}}
 
+        <div class="page-content">
+          <div class="content-block">
+            <h1>Welcome to Timetable Page</h1>
+          </div>
+        </div>
+    </div>
+  </script>
+  <!-- Grades -->
+  <script type="text/template7" id="grades">
+    <!-- Dynamic navbar for iOS theme -->
+    {{#if @global.ios}}
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="left">
+          <a href="#" class="link icon-only open-panel"><i class="fa fa-bars"></i></a>
+        </div>
+        <div class="center sliding">Grades</div>
+      </div>
+    </div>
+    {{/if}}
 
+    <div class="page" data-page="grades">
+        <!-- Fixed navbar for Material theme -->
+        {{#if @global.material}}
+          <div class="navbar">
+            <div class="navbar-inner">
+              <div class="left">
+                <a href="#" class="link icon-only open-panel"><i class="fa fa-bars"></i></a>
+              </div>
+            <div class="center sliding">Grades</div>
+          </div>
+        </div>
+        {{/if}}
 
+        <div class="page-content">
+          <div class="content-block">
+            <h1>Welcome to Grades Page</h1>
+          </div>
+        </div>
+    </div>
+  </script>
 
+  <!-- News Page -->
+  <script type="text/template7" id="news">
+    <!-- Dynamic navbar for iOS theme -->
+    {{#if @global.ios}}
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="left">
+          <a href="#" class="link icon-only open-panel"><i class="fa fa-bars"></i></a>
+        </div>
+        <div class="center sliding">Favorites</div>
+      </div>
+    </div>
+    {{/if}}
 
+    <div class="page" data-page="news">
+        <!-- Fixed navbar for Material theme -->
+        {{#if @global.material}}
+          <div class="navbar">
+            <div class="navbar-inner">
+              <div class="left">
+                <a href="#" class="link icon-only open-panel"><i class="fa fa-bars"></i></a>
+              </div>
+            <div class="center sliding">News/Events</div>
+          </div>
+        </div>
+        {{/if}}
 
+        <div class="page-content">
+          <div class="content-block">
+            <h1>Welcome to News Page</h1>
+          </div>
+        </div>
+    </div>
+  </script>
+  <!-- Library Page -->
+  <script type="text/template7" id="library">
+    <!-- Dynamic navbar for iOS theme -->
+    {{#if @global.ios}}
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="left">
+          <a href="#" class="link icon-only open-panel"><i class="fa fa-bars"></i></a>
+        </div>
+        <div class="center sliding">Library</div>
+      </div>
+    </div>
+    {{/if}}
+
+    <div class="page" data-page="library">
+        <!-- Fixed navbar for Material theme -->
+        {{#if @global.material}}
+          <div class="navbar">
+            <div class="navbar-inner">
+              <div class="left">
+                <a href="#" class="link icon-only open-panel"><i class="fa fa-bars"></i></a>
+              </div>
+            <div class="center sliding">Library</div>
+          </div>
+        </div>
+        {{/if}}
+
+        <div class="page-content">
+          <div class="content-block">
+            <h1>Welcome to Library Page</h1>
+          </div>
+        </div>
+    </div>
+  </script>
+
+  <!-- Support Page -->
+  <script type="text/template7" id="support">
+    <!-- Dynamic navbar for iOS theme -->
+    {{#if @global.ios}}
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="left">
+          <a href="#" class="link icon-only open-panel"><i class="fa fa-bars"></i></a>
+        </div>
+        <div class="center sliding">Support</div>
+      </div>
+    </div>
+    {{/if}}
+
+    <div class="page" data-page="support">
+        <!-- Fixed navbar for Material theme -->
+        {{#if @global.material}}
+          <div class="navbar">
+            <div class="navbar-inner">
+              <div class="left">
+                <a href="#" class="link icon-only open-panel"><i class="fa fa-bars"></i></a>
+              </div>
+            <div class="center sliding">Support</div>
+          </div>
+        </div>
+        {{/if}}
+
+        <div class="page-content">
+          <div class="content-block">
+            <h1>Welcome to Support Page</h1>
+          </div>
+        </div>
+    </div>
+  </script>
 
   <script type="text/javascript" src="cordova.js"></script>
   <script type="text/javascript" src="lib/MSOpenTech/winstore-jscompat.js"></script>
   <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
   <script type="text/javascript" src="js/init-styles.js"></script>
   <script type="text/javascript" src="js/my-app.js"></script>
-  <script type="text/javascript" src="js/myc.js" charset="utf-8"></script>
 </body>
 
 </html>
