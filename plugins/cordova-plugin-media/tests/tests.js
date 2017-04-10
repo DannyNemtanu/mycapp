@@ -18,14 +18,10 @@
  * under the License.
  *
  */
-
-/* jshint jasmine: true */
-/* global Windows, Media, MediaError, LocalFileSystem, halfSpeedBtn */
-
 // increased timeout for actual playback to give device chance to download and play mp3 file
 // some emulators can be REALLY slow at this, so two minutes
 var ACTUAL_PLAYBACK_TEST_TIMEOUT = 2 * 60 * 1000;
-
+ 
 var isWindows = cordova.platformId == 'windows8' || cordova.platformId == 'windows';
 // detect whether audio hardware is available and enabled
 var isAudioSupported = isWindows ? Windows.Media.Devices.MediaDevice.getDefaultAudioRenderId(Windows.Media.Devices.AudioDeviceRole.default) : true;
@@ -168,14 +164,7 @@ exports.defineAutoTests = function () {
             media1.release();
         });
 
-        it("media.spec.15 should contain a getCurrentAmplitude function", function () {
-            var media1 = new Media("dummy");
-            expect(media1.getCurrentAmplitude).toBeDefined();
-            expect(typeof media1.getCurrentAmplitude).toBe('function');
-            media1.release();
-        });
-
-        it("media.spec.16 should return MediaError for bad filename", function (done) {
+        it("media.spec.15 should return MediaError for bad filename", function (done) {
             //bb10 dialog pops up, preventing tests from running
             if (cordova.platformId === 'blackberry10') {
                 pending();
@@ -210,7 +199,7 @@ exports.defineAutoTests = function () {
                 }
             });
 
-            it("media.spec.17 position should be set properly", function (done) {
+            it("media.spec.16 position should be set properly", function (done) {
                 // no audio hardware available
                 if (!isAudioSupported) {
                     pending();
@@ -220,7 +209,7 @@ exports.defineAutoTests = function () {
                 //in case the statusChange callback is reached more than one time with the same status code.
                 //Some information about this kind of behaviour can be found at JIRA: CB-7099.
                 var context = this,
-                    mediaFile = 'https://cordova.apache.org/downloads/BlueZedEx.mp3',
+                    mediaFile = 'http://cordova.apache.org/downloads/BlueZedEx.mp3',
                     successCallback = function () { },
                     statusChange = function (statusCode) {
                         if (!context.done && statusCode == Media.MEDIA_RUNNING) {
@@ -236,11 +225,11 @@ exports.defineAutoTests = function () {
                             }, 1000);
                         }
                     };
-                media = new Media(mediaFile, successCallback, failed.bind(null, done, 'media1 = new Media - Error creating Media object. Media file: ' + mediaFile, context), statusChange);
+                media = new Media(mediaFile, successCallback, failed.bind(self, done, 'media1 = new Media - Error creating Media object. Media file: ' + mediaFile, context), statusChange);
                 media.play();
             }, ACTUAL_PLAYBACK_TEST_TIMEOUT);
 
-            it("media.spec.18 duration should be set properly", function (done) {
+            it("media.spec.17 duration should be set properly", function (done) {
                 if (!isAudioSupported || cordova.platformId === 'blackberry10') {
                     pending();
                 }
@@ -249,7 +238,7 @@ exports.defineAutoTests = function () {
                 //in case the statusChange callback is reached more than one time with the same status code.
                 //Some information about this kind of behaviour can be found at JIRA: CB-7099.
                 var context = this,
-                    mediaFile = 'https://cordova.apache.org/downloads/BlueZedEx.mp3',
+                    mediaFile = 'http://cordova.apache.org/downloads/BlueZedEx.mp3',
                     successCallback = function () { },
                     statusChange = function (statusCode) {
                         if (!context.done && statusCode == Media.MEDIA_RUNNING) {
@@ -265,11 +254,11 @@ exports.defineAutoTests = function () {
                             }, 1000);
                         }
                     };
-                media = new Media(mediaFile, successCallback, failed.bind(null, done, 'media1 = new Media - Error creating Media object. Media file: ' + mediaFile, context), statusChange);
+                media = new Media(mediaFile, successCallback, failed.bind(self, done, 'media1 = new Media - Error creating Media object. Media file: ' + mediaFile, context), statusChange);
                 media.play();
             }, ACTUAL_PLAYBACK_TEST_TIMEOUT);
 
-            it("media.spec.19 should be able to resume playback after pause", function (done) {
+            it("media.spec.20 should be able to resume playback after pause", function (done) {
                 if (!isAudioSupported || cordova.platformId === 'blackberry10') {
                     pending();
                 }
@@ -279,7 +268,7 @@ exports.defineAutoTests = function () {
                 //Some information about this kind of behaviour can be found at JIRA: CB-7099.
                 var context = this;
                 var resumed = false;
-                var mediaFile = 'https://cordova.apache.org/downloads/BlueZedEx.mp3';
+                var mediaFile = 'http://cordova.apache.org/downloads/BlueZedEx.mp3';
                 var successCallback = function () { };
                 var statusChange = function (statusCode) {
                     if (context.done) return;
@@ -295,7 +284,7 @@ exports.defineAutoTests = function () {
                             expect(position).toBeCloseTo(20, 0);
                             context.done = true;
                             done();
-                        }, failed.bind(null, done, 'media1.getCurrentPosition - Error getting media current position', context));
+                        }, failed.bind(null, done, 'media1.getCurrentPosition - Error getting media current position', context))
                     }
 
                     if (statusCode == Media.MEDIA_PAUSED) {
@@ -303,16 +292,11 @@ exports.defineAutoTests = function () {
                         media.play();
                     }
                 };
-                media = new Media(mediaFile, successCallback, failed.bind(null, done, 'media1 = new Media - Error creating Media object. Media file: ' + mediaFile, context), statusChange);
-
-                // CB-10535: Play after a few secs, to give allow enough buffering of media file before seeking
-                setTimeout(function() {
-                    media.play();
-                }, 4000);
-
+                media = new Media(mediaFile, successCallback, failed.bind(self, done, 'media1 = new Media - Error creating Media object. Media file: ' + mediaFile, context), statusChange);
+                media.play();
             }, ACTUAL_PLAYBACK_TEST_TIMEOUT);
 
-            it("media.spec.20 should be able to seek through file", function (done) {
+            it("media.spec.21 should be able to seek through file", function (done) {
                 if (!isAudioSupported || cordova.platformId === 'blackberry10') {
                     pending();
                 }
@@ -321,7 +305,7 @@ exports.defineAutoTests = function () {
                 //in case the statusChange callback is reached more than one time with the same status code.
                 //Some information about this kind of behaviour can be found at JIRA: CB-7099.
                 var context = this;
-                var mediaFile = 'https://cordova.apache.org/downloads/BlueZedEx.mp3';
+                var mediaFile = 'http://cordova.apache.org/downloads/BlueZedEx.mp3';
                 var successCallback = function () { };
                 var statusChange = function (statusCode) {
                     if (!context.done && statusCode == Media.MEDIA_RUNNING) {
@@ -336,30 +320,26 @@ exports.defineAutoTests = function () {
                         }, 1000);
                     }
                 };
-                media = new Media(mediaFile, successCallback, failed.bind(null, done, 'media1 = new Media - Error creating Media object. Media file: ' + mediaFile, context), statusChange);
-
-                // CB-10535: Play after a few secs, to give allow enough buffering of media file before seeking
-                setTimeout(function() {
-                    media.play();
-                }, 4000);
-
+                media = new Media(mediaFile, successCallback, failed.bind(self, done, 'media1 = new Media - Error creating Media object. Media file: ' + mediaFile, context), statusChange);
+                media.play();
             }, ACTUAL_PLAYBACK_TEST_TIMEOUT);
         });
 
-        it("media.spec.21 should contain a setRate function", function () {
+        it("media.spec.18 should contain a setRate function", function () {
             var media1 = new Media("dummy");
             expect(media1.setRate).toBeDefined();
             expect(typeof media1.setRate).toBe('function');
             media1.release();
         });
 
-        it("media.spec.22 playback rate should be set properly using setRate", function (done) {
+        it("media.spec.19 playback rate should be set properly using setRate", function (done) {
             if (cordova.platformId !== 'ios') {
                 expect(true).toFailWithMessage('Platform does not supported this feature');
                 pending();
                 return;
             }
-            var mediaFile = 'https://cordova.apache.org/downloads/BlueZedEx.mp3',
+            var mediaFile = 'http://cordova.apache.org/downloads/BlueZedEx.mp3',
+                mediaState = Media.MEDIA_STOPPED,
                 successCallback,
                 context = this,
                 flag = true,
@@ -372,9 +352,8 @@ exports.defineAutoTests = function () {
                         flag = false;
                         setTimeout(function () {
                             media1.getCurrentPosition(function (position) {
-                                //in four seconds expect position to be between 4 & 10. Here, the values are chosen to give
-                                //a large enough buffer range for the position to fall in and are not based on any calculation.
-                                expect(position >= 4 && position < 10).toBeTruthy();
+                                //in four seconds expect position to be two times greater with some degree (1 sec) of accuracy
+                                expect(position).toBeGreaterThan(7);
                                 media1.stop();
                                 media1.release();
                                 done();
@@ -382,8 +361,8 @@ exports.defineAutoTests = function () {
                         }, 4000);
                     }
                 };
-
-            var media1 = new Media(mediaFile, successCallback, failed.bind(null, done, 'media1 = new Media - Error creating Media object. Media file: ' + mediaFile, context), statusChange); // jshint ignore:line
+                
+            var media1 = new Media(mediaFile, successCallback, failed.bind(null, done, 'media1 = new Media - Error creating Media object. Media file: ' + mediaFile, context), statusChange);
             //make audio playback two times faster
             media1.setRate(2);
             media1.play();
@@ -402,7 +381,7 @@ exports.defineManualTests = function (contentEl, createActionButton) {
     var media1 = null;
     var media1Timer = null;
     var audioSrc = null;
-    var defaultaudio = "https://cordova.apache.org/downloads/BlueZedEx.mp3";
+    var defaultaudio = "http://cordova.apache.org/downloads/BlueZedEx.mp3";
 
     //Play audio function
     function playAudio(url) {
@@ -912,6 +891,7 @@ exports.defineManualTests = function (contentEl, createActionButton) {
         pauseAudio();
     }, 'pauseBtn');
     createActionButton('HalfSpeed', function() {
+    
         if(halfSpeedBtn.firstChild.firstChild.innerText == 'HalfSpeed') {
             halfSpeedBtn.firstChild.firstChild.innerText = 'FullSpeed';
             media1.setRate(0.5);
