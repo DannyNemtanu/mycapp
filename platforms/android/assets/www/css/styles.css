@@ -196,4 +196,15 @@ body {
 }
 
 
+
+.support-info{
+  display: none;
+  background-color:lightsalmon;
+  border: 1px dotted steelblue;
+}
+
+#container1 .support-selection:nth-child(odd){
+  border:2px solid steelblue;
+}
+
 /*Timetable Page*/

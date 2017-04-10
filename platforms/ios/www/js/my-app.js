@@ -54,7 +54,7 @@ if (!isIos) {
 
 // Initialize app
 var myApp = new Framework7({
-  material: isIos? false : true,
+  material: isIos ? false : true,
   template7Pages: true,
   precompileTemplates: true,
   swipePanel: 'left',
@@ -135,7 +135,34 @@ $$(document).on('click', '.panel .support-link', function searchLink() {
       reload: true,
     });
   }
+
+  console.log("Hello");
+  $.ajax({
+    url: 'http://localhost:3002/api/supports?filter={"where":{"collegeID":1}}'
+  }).then(function (data) {
+    $('.content-block #container1').empty();
+    for (var i = 0; i < data.length; i++) {
+      $('.content-block #container1').append(
+        '<div id="support-block'+i+'">'+
+        '<h2 class="support-selection">'
+        + data[i].supportName +
+        '</h2>' +
+        '<div class="support-info">' +
+        '<h3>Support Type:' + data[i].desc + '</h3>' +
+        '<h3>Contact Number:' + data[i].contactNum + '</h3>' +
+        '<h3>Location:' + data[i].location + '</h3>' +
+        '</div>' +
+        '</div>');
+    }
+  });
+
+
+
+
+
 });
+
+
 
 /**
  * Search
@@ -275,7 +302,7 @@ function mediaPreviewStatusCallback(status) {
       setPlaybackControlsStatus('stopped');
       break;
     default:
-      // Default fall back not needed
+    // Default fall back not needed
   }
 }
 
@@ -283,7 +310,7 @@ function addOrRemoveFavorite(e) {
   if (this.isFavorite) {
     // remove the favorite from the arrays
     this.favoriteIds.splice(this.favoriteIds.indexOf(this.id), 1);
-    var favorites = this.favorites.filter(function(fave) {
+    var favorites = this.favorites.filter(function (fave) {
       return fave.id !== this.id;
     }, this);
     this.favorites = favorites;
@@ -322,7 +349,7 @@ function addOrRemoveFavorite(e) {
   }
 }
 
-myApp.onPageInit('details', function(page) {
+myApp.onPageInit('details', function (page) {
   var previewUrl = page.context.preview_url;
   if (typeof Media !== 'undefined') {
     // Create media object on page load so as to let it start buffering right
@@ -335,7 +362,7 @@ myApp.onPageInit('details', function(page) {
     //  Media plugin
     function noMedia() {
       myApp.alert('Media playback not supported', 'Media Error');
-      setTimeout(function() {
+      setTimeout(function () {
         setPlaybackControlsStatus('stopped');
         mediaPreviewStatusCallback(4); // stopped
         console.error('No media plugin available');
@@ -343,9 +370,9 @@ myApp.onPageInit('details', function(page) {
     }
     mediaPreview = {
       play: noMedia,
-      stop: function() {},
-      release: function() {},
-      getCurrentPosition: function() {},
+      stop: function () { },
+      release: function () { },
+      getCurrentPosition: function () { },
     };
   }
 
@@ -372,7 +399,7 @@ myApp.onPageInit('details', function(page) {
   $$('.link.star').on('click', addOrRemoveFavorite.bind(pageContext));
 });
 
-myApp.onPageBeforeRemove('details', function(page) {
+myApp.onPageBeforeRemove('details', function (page) {
   // stop playing before leaving the page
   monitorMediaPreviewCurrentPosition();
   mediaPreview.stop();

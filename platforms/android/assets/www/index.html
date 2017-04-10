@@ -11,7 +11,7 @@
         * Enable inline JS: add 'unsafe-inline' to default-src
     -->
   <!-- Removing 'unsafe-eval'. If needed, I will figure out a way around it -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com https://api.spotify.com 'unsafe-eval' 'unsafe-inline' ws://*; style-src 'self' 'unsafe-inline'; media-src *; img-src * data:">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: http://code.jquery.com https://ssl.gstatic.com https://api.spotify.com http://localhost:3002 'unsafe-eval' 'unsafe-inline' ws://*; style-src 'self' 'unsafe-inline'; media-src *; img-src * data:">
 
   <!-- Required meta tags-->
   <meta charset="utf-8">
@@ -176,7 +176,8 @@
   <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
   <script type="text/javascript" src="js/init-styles.js"></script>
   <script type="text/javascript" src="js/my-app.js"></script>
-  <script type="text/javascript" src="js/myc.js" charset="utf-8"></script>
+  <script type="text/javascript" src="js/myc.js"></script>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 </body>
 
 </html>

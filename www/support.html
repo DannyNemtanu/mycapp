@@ -1,6 +1,18 @@
+<!-- Dynamic navbar for iOS theme -->
+{{#if @global.ios}}
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="left">
+      <a href="#" class="link icon-only open-panel"><i class="fa fa-bars"></i></a>
+    </div>
+    <div class="center sliding">Support</div>
+  </div>
+</div>
+{{/if}}
 
-  <!-- Dynamic navbar for iOS theme -->
-  {{#if @global.ios}}
+<div class="page" data-page="support">
+  <!-- Fixed navbar for Material theme -->
+  {{#if @global.material}}
   <div class="navbar">
     <div class="navbar-inner">
       <div class="left">
@@ -11,22 +23,11 @@
   </div>
   {{/if}}
 
-  <div class="page" data-page="support">
-      <!-- Fixed navbar for Material theme -->
-      {{#if @global.material}}
-        <div class="navbar">
-          <div class="navbar-inner">
-            <div class="left">
-              <a href="#" class="link icon-only open-panel"><i class="fa fa-bars"></i></a>
-            </div>
-          <div class="center sliding">Support</div>
-        </div>
+  <div class="page-content">
+    <div class="content-block">
+      <h1>Welcome to Support Page</h1>
+      <div id="container1" style="text-align: center">
       </div>
-      {{/if}}
-
-      <div class="page-content">
-        <div class="content-block">
-          <h1>Welcome to Support Page</h1>
-        </div>
-      </div>
+    </div>
   </div>
+</div>
