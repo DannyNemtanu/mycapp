@@ -39,6 +39,10 @@ phonegap run ios
 cordova platform add android
 cordova run android --device
 ```
+
+
+
+### Starting your API
 To start the api 
 cd to mycapp/mycapi
 and type node .
