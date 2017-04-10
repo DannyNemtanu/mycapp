@@ -39,5 +39,9 @@ phonegap run ios
 cordova platform add android
 cordova run android --device
 ```
-
-etc...
+To start the api 
+cd to mycapp/mycapi
+and type node .
+This starts the api and your api should be up at 0.0.0.0:3002
+and then cd back to mycapp and try phonegap serve and support page should be able to access the api.
+Good Luck!
