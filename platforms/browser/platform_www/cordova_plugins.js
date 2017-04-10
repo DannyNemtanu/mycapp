@@ -235,7 +235,8 @@ module.exports.metadata =
     "cordova-plugin-media": "2.3.0",
     "cordova-plugin-splashscreen": "3.1.0",
     "cordova-plugin-statusbar": "1.0.1",
-    "cordova-plugin-whitelist": "1.2.2"
+    "cordova-plugin-whitelist": "1.2.2",
+    "cordova-plugin-geolocation": "2.4.2"
 }
 // BOTTOM OF METADATA
 });

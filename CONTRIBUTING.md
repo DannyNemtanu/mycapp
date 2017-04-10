@@ -1,6 +1,6 @@
 ## Contributing
 
-Thank you for your interest in contributing to the Star Track PhoneGap Example App.
+Thank you for your interest in contributing to the MYC PhoneGap.
 
 #### Issues
 
