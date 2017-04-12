@@ -123,6 +123,26 @@ $$(document).on('click', '.panel .library-link', function searchLink() {
       reload: true,
     });
   }
+
+  $.ajax({
+    url: 'http://localhost:3002/api/libraries'
+  }).then(function (data) {
+    // console.log(data);
+    for(let i=0;i<data.length;i++){
+      if(data[i].category==="Social Sciences"){
+       $('.content-block #social-science-category').append(
+         '<div class="book">'+
+          '<h3>'+data[i].title+'</h3>'+
+          '<img src='+"../img/logo.png"+'></img>'+
+         '<div>'
+       );
+        
+      }
+    }
+
+
+  });
+
 });
 
 $$(document).on('click', '.panel .support-link', function searchLink() {
@@ -143,7 +163,7 @@ $$(document).on('click', '.panel .support-link', function searchLink() {
     $('.content-block #container1').empty();
     for (var i = 0; i < data.length; i++) {
       $('.content-block #container1').append(
-        '<div id="support-block'+i+'">'+
+        '<div id="support-block' + i + '">' +
         '<h2 class="support-selection">'
         + data[i].supportName +
         '</h2>' +

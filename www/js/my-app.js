@@ -123,6 +123,241 @@ $$(document).on('click', '.panel .library-link', function searchLink() {
       reload: true,
     });
   }
+
+//first line
+  $.ajax({
+    url: 'http://localhost:3002/api/libraries'
+  }).then(function (data) {
+    // console.log(data);
+    for(let i=0;i<data.length;i++){
+      if(data[i].category==="Social Sciences"){
+       $('.content-block #social-science-category').append(
+         '<div class="book">'+
+          '<h3>'+data[i].title+'</h3>'+
+          '<img src='+"../img/Social Sciences.jpg"+'></img>'+
+         '<div>'
+       );
+        
+      }
+    }
+  });
+
+//try of modal box
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+//finish here
+
+
+
+
+//second line
+
+ $.ajax({
+    url: 'http://localhost:3002/api/libraries'
+  }).then(function (data) {
+    // console.log(data);
+    for(let i=0;i<data.length;i++){
+      if(data[i].category==="Arts and recreation"){
+       $('.content-block #arts-and-recreation-category').append(
+         '<div class="book">'+
+          '<h3>'+data[i].title+'</h3>'+
+          '<img src='+"../img/Arts recreation.jpg"+'></img>'+
+         '<div>'
+       );
+        
+      }
+    }
+  });
+  //third line
+  $.ajax({
+    url: 'http://localhost:3002/api/libraries'
+  }).then(function (data) {
+    // console.log(data);
+    for(let i=0;i<data.length;i++){
+      if(data[i].category==="Religion"){
+       $('.content-block #religion-category').append(
+         '<div class="book">'+
+          '<h3>'+data[i].title+'</h3>'+
+          '<img src='+"../img/Religion.jpg"+'></img>'+
+         '<div>'
+       );
+        
+      }
+    }
+  });
+  //fourth line
+  $.ajax({
+    url: 'http://localhost:3002/api/libraries'
+  }).then(function (data) {
+    // console.log(data);
+    for(let i=0;i<data.length;i++){
+      if(data[i].category==="Literature"){
+       $('.content-block #literature-category').append(
+         '<div class="book">'+
+          '<h3>'+data[i].title+'</h3>'+
+          '<img src='+"../img/Literature.jpg"+'></img>'+
+         '<div>'
+       );
+        
+      }
+    }
+  });
+  //fifth line
+  $.ajax({
+    url: 'http://localhost:3002/api/libraries'
+  }).then(function (data) {
+    // console.log(data);
+    for(let i=0;i<data.length;i++){
+      if(data[i].category==="Science"){
+       $('.content-block #science-category').append(
+         '<div class="book">'+
+          '<h3>'+data[i].title+'</h3>'+
+          '<img src='+"../img/Science.jpg"+'></img>'+
+         '<div>'
+       );
+        
+      }
+    }
+  });
+
+
+  //6th line
+   $.ajax({
+    url: 'http://localhost:3002/api/libraries'
+  }).then(function (data) {
+    // console.log(data);
+    for(let i=0;i<data.length;i++){
+      if(data[i].category==="information and general works"){
+       $('.content-block #information-and-general-works-category').append(
+         '<div class="book">'+
+          '<h3>'+data[i].title+'</h3>'+
+          '<img src='+"../img/information.jpeg"+'></img>'+
+         '<div>'
+       );
+        
+      }
+    }
+  });
+  //7th line
+   $.ajax({
+    url: 'http://localhost:3002/api/libraries'
+  }).then(function (data) {
+    // console.log(data);
+    for(let i=0;i<data.length;i++){
+      if(data[i].category==="Technology and applied science"){
+       $('.content-block #technology-and-applied-science-category').append(
+         '<div class="book">'+
+          '<h3>'+data[i].title+'</h3>'+
+          '<img src='+"../img/applied science.png"+'></img>'+
+         '<div>'
+       );
+        
+      }
+    }
+  });
+
+//8th
+     $.ajax({
+    url: 'http://localhost:3002/api/libraries'
+  }).then(function (data) {
+    // console.log(data);
+    for(let i=0;i<data.length;i++){
+      if(data[i].category==="Philosophy and psychology"){
+       $('.content-block #philosophy-and-psychology-category').append(
+         '<div class="book">'+
+          '<h3>'+data[i].title+'</h3>'+
+          '<img src='+"../img/logo.png"+'></img>'+
+         '<div>'
+       );
+        
+      }
+    }
+  });
+//9th
+     $.ajax({
+    url: 'http://localhost:3002/api/libraries'
+  }).then(function (data) {
+    // console.log(data);
+    for(let i=0;i<data.length;i++){
+      if(data[i].category==="Computer science"){
+       $('.content-block #computer-science-category').append(
+         '<div class="book">'+
+          '<h3>'+data[i].title+'</h3>'+
+          '<img src='+"../img/Philosophy.jpg"+'></img>'+
+         '<div>'
+       );
+        
+      }
+    }
+  });
+//10th
+     $.ajax({
+    url: 'http://localhost:3002/api/libraries'
+  }).then(function (data) {
+    // console.log(data);
+    for(let i=0;i<data.length;i++){
+      if(data[i].category==="Language"){
+       $('.content-block #language-category').append(
+         '<div class="book">'+
+          '<h3>'+data[i].title+'</h3>'+
+          '<img src='+"../img/Language.jpg"+'></img>'+
+         '<div>'
+       );
+        
+      }
+    }
+  });
+
+//11th
+   $.ajax({
+    url: 'http://localhost:3002/api/libraries'
+  }).then(function (data) {
+    // console.log(data);
+    for(let i=0;i<data.length;i++){
+      if(data[i].category==="History and geography"){
+       $('.content-block #history-and-geography-category').append(
+         '<div class="book">'+
+          '<h3>'+data[i].title+'</h3>'+
+          '<img src='+"../img/History.jpg"+'></img>'+
+         '<div>'
+       );
+        
+      }
+    }
+  });
+
+
+
+
+
+
+
+
+
+
 });
 
 $$(document).on('click', '.panel .support-link', function searchLink() {
@@ -143,7 +378,7 @@ $$(document).on('click', '.panel .support-link', function searchLink() {
     $('.content-block #container1').empty();
     for (var i = 0; i < data.length; i++) {
       $('.content-block #container1').append(
-        '<div id="support-block'+i+'">'+
+        '<div id="support-block' + i + '">' +
         '<h2 class="support-selection">'
         + data[i].supportName +
         '</h2>' +

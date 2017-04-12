@@ -1,6 +1,18 @@
+<!-- Dynamic navbar for iOS theme -->
+{{#if @global.ios}}
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="left">
+      <a href="#" class="link icon-only open-panel"><i class="fa fa-bars"></i></a>
+    </div>
+    <div class="center sliding">Library</div>
+  </div>
+</div>
+{{/if}}
 
-  <!-- Dynamic navbar for iOS theme -->
-  {{#if @global.ios}}
+<div class="page" data-page="library">
+  <!-- Fixed navbar for Material theme -->
+  {{#if @global.material}}
   <div class="navbar">
     <div class="navbar-inner">
       <div class="left">
@@ -11,22 +23,61 @@
   </div>
   {{/if}}
 
-  <div class="page" data-page="library">
-      <!-- Fixed navbar for Material theme -->
-      {{#if @global.material}}
-        <div class="navbar">
-          <div class="navbar-inner">
-            <div class="left">
-              <a href="#" class="link icon-only open-panel"><i class="fa fa-bars"></i></a>
-            </div>
-          <div class="center sliding">Library</div>
-        </div>
-      </div>
-      {{/if}}
 
-      <div class="page-content">
-        <div class="content-block">
-          <h1>Welcome to Library Page</h1>
-        </div>
-      </div>
+<!-- try the modal box of the first line of book -->
+  <div class="page-content">
+    <div class="content-block">
+      <h1>Welcome to Library Page</h1>
+      <div class="category" id="social-science-category">
+        <h2>Social Sciences</h2>
+        
+        <!-- Trigger/Open The Modal -->
+         <button id="myBtn">More information</button>
+        <!-- The Modal -->
+  <div id="myModal" class="modal">
+        <!-- Modal content -->
+    <div class="modal-content">
+         <span class="close">&times;</span>
+         <div class="title" id="social-science-title"></div>
+           <div class="bookID" id="social-science-bookID"></div>
+             <div class="author" id="social-science-author"></div>
+               <div class="description" id="social-science-description"></div>
+    </div>
   </div>
+      </div>
+<!-- finish here modal box -->
+
+
+      <div class="category" id="arts-and-recreation-category">
+        <h2>Arts and recreation</h2>
+      </div>
+      <div class="category" id="religion-category">
+        <h2>Religion</h2>
+      </div>
+      <div class="category" id="literature-category">
+        <h2>Literature</h2>
+      </div>
+      <div class="category" id="science-category">
+        <h2>Science</h2>
+      </div>
+      <div class="category" id="information-and-general-works-category">
+        <h2>information and general works</h2>
+      </div>
+      <div class="category" id="technology-and-applied-science-category">
+        <h2>Technology and applied science</h2>
+      </div>
+      <div class="category" id="philosophy-and-psychology-category">
+        <h2>Philosophy and psychology</h2>
+      </div>
+      <div class="category" id="computer-science-category">
+        <h2>Computer science</h2>
+      </div>
+      <div class="category" id="language-category">
+        <h2>Language</h2>
+      </div>
+      <div class="category" id="history-and-geography-category">
+        <h2>History and geography</h2>
+      </div>     
+    </div>
+  </div>
+</div>

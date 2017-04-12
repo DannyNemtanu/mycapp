@@ -16,5 +16,9 @@
   "support": {
     "dataSource": "azuresql",
     "public": true
+  },
+  "library": {
+    "dataSource": "azuresql",
+    "public": true
   }
 }
