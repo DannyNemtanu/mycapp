@@ -1,8 +1,12 @@
 angular.module('starter.controllers',[])
 
 .controller('AppCtrl',function($scope,$ionicModal,$timeout,$ionicPopup,$http,$state,$ionicHistory){
+
+    
+    
     var url="http://localhost/MYC/www/conect/";
 
+    
     $scope.loginData={};
 
     $scope.doLogin=function(){

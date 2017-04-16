@@ -10,9 +10,12 @@ if(isset($_GET["username"]) && isset($_GET["password"]) ){
 		$username=$_GET["username"];
 		$password=$_GET["password"];
 
-		$query="SELECT * FROM student
-				where email='".$_GET["username"]."' and pass='".$_GET["password"]."'  ";
-		$result = $conn->query($query);
+		$query="SELECT * FROM `Student`
+				where `email`='".$_GET["username"]."' and `pass`='".$_GET["password"]."'  ";
+		//$query="SELECT * FROM `Student` WHERE `email` = 'adm' AND `pass` = 'adm'
+        
+        
+        $result = $conn->query($query);
 
     $outp = "";
 		if( $rs=$result->fetch_array()) {
