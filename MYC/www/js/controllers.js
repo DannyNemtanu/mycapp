@@ -1,7 +1,7 @@
-﻿angular.module('starter.controllers',[])
+angular.module('starter.controllers',[])
 
 .controller('AppCtrl',function($scope,$ionicModal,$timeout,$ionicPopup,$http,$state,$ionicHistory){
-    var url="http://localhost/myc/www/conect/";
+    var url="http://localhost/MYC/www/conect/";
 
     $scope.loginData={};
 
