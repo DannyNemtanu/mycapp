@@ -1,0 +1,17 @@
+Database type	
+MySQL
+
+host: mysql2493.cp.blacknight.com
+
+Database name	
+db1009676_thepanthers
+
+Allow Access from External Hosts	
+Enabled
+ 
+New Database's user Info
+
+Database user name	
+u1009676_myc
+Password	
+*Qwert12345
