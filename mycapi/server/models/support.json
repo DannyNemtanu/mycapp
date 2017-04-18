@@ -24,8 +24,8 @@
     },
     "collegeID": {
       "type": "number",
-      "required": true,
-      "id":"true"
+      "id": "true",
+      "required": true
     }
   },
   "validations": [],

@@ -1,16 +1,15 @@
 {
   "azuresql": {
-    "name":"azuresql",
     "host": "thepanthersnci.database.windows.net",
     "port": 1433,
     "database": "thepanthers",
-    "password": "$qwer1234",
     "username": "thepanthersnci",
+    "password": "$qwer1234",
+    "name": "azuresql",
     "connector": "mssql",
-    "schema":"thepanthers",
-    "options":{
-	"encrypt":"true"	
+    "schema": "thepanthers",
+    "options": {
+      "encrypt": "true"
     }
-
   }
 }

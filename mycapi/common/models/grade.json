@@ -1,0 +1,24 @@
+{
+  "name": "grade",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "ClassName": {
+      "type": "string"
+    },
+    "studentNumber": {
+      "type": "string",
+      "id": true
+    },
+    "grade": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
