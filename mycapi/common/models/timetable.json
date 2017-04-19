@@ -16,8 +16,8 @@
       "type": "string"
     },
     "courseCode": {
-      "id": true,
-      "type": "string"
+      "type": "string",
+      "id": true
     }
   },
   "validations": [],

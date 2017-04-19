@@ -17,10 +17,6 @@
     "dataSource": "azuresql",
     "public": true
   },
-  "news": {
-    "dataSource": "azuresql",
-    "public": true
-  },
   "grade": {
     "dataSource": "azuresql",
     "public": true
@@ -30,6 +26,10 @@
     "public": true
   },
   "timetable": {
+    "dataSource": "azuresql",
+    "public": true
+  },
+  "news": {
     "dataSource": "azuresql",
     "public": true
   }

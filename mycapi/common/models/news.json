@@ -8,8 +8,7 @@
   "properties": {
     "newsId": {
       "type": "number",
-      "id": true,
-      "required": true
+      "id" : true
     },
     "title": {
       "type": "string"
@@ -24,10 +23,19 @@
       "type": "string"
     },
     "date": {
-      "type": "date"
+      "type": "string"
+    },
+    "startTime": {
+      "type": "string"
+    },
+    "endTime": {
+      "type": "string"
+    },
+    "month": {
+      "type": "string"
     },
     "collegeID": {
-      "type": "number"
+      "type": "string"
     }
   },
   "validations": [],
