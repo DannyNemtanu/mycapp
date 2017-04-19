@@ -1,0 +1,27 @@
+{
+  "name": "timetable",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "she_Day": {
+      "type": "string"
+    },
+    "she_TimeSlot": {
+      "type": "number"
+    },
+    "className": {
+      "type": "string"
+    },
+    "courseCode": {
+      "type": "string",
+      "id": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

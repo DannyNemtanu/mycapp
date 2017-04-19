@@ -74,6 +74,32 @@ var mainView = myApp.addView('.view-main', {
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function deviceIsReady() {
   console.log('Device is ready!');
+  // News Page
+  console.log("News Page Ready");
+  var mySwiper = new Swiper ('.swiper-container', {
+      // Optional parameters
+      direction: 'vertical',
+      loop: true
+    });
+  $.ajax({
+    url: 'http://localhost:3002/api/news?filter={"where":{"collegeID":1}}'
+  }).then(function (data) {
+    $('.news-events .event-items').empty();
+    for (var i = 0; i < data.length; i++) {
+      $('.news-events .event-items').append(
+        '<div class="eitem">'+
+            '<div class="eitem-img">'+
+              '<div id="eitem-img-top">'+data[i].month+'</div>'+
+              '<div id="eitem-img-bottom">'+data[i].date+'</div>'+
+            '</div>'+
+            '<div class="eitem-desc">'+
+              '<h3 id="title">'+data[i].title+'</h3>'+
+              '<p id="description">'+data[i].description+'</p>'+
+              '<h4 id="date">'+data[i].date+' '+data[i].month+' | '+data[i].startTime + ':00 - '+data[i].endTime+':00 </h4>'+
+            '</div>'+
+        '</div>');
+    }
+});
 });
 
 
@@ -88,6 +114,32 @@ $$(document).on('click', '.panel .news-link', function searchLink() {
       reload: true,
     });
   }
+  // News Page
+  console.log("News Page Ready");
+  var mySwiper = new Swiper ('.swiper-container', {
+      // Optional parameters
+      direction: 'vertical',
+      loop: true
+    });
+  $.ajax({
+    url: 'http://localhost:3002/api/news?filter={"where":{"collegeID":1}}'
+  }).then(function (data) {
+    $('.news-events .event-items').empty();
+    for (var i = 0; i < data.length; i++) {
+      $('.news-events .event-items').append(
+        '<div class="eitem">'+
+            '<div class="eitem-img">'+
+              '<div id="eitem-img-top">'+data[i].month+'</div>'+
+              '<div id="eitem-img-bottom">'+data[i].date+'</div>'+
+            '</div>'+
+            '<div class="eitem-desc">'+
+              '<h3 id="title">'+data[i].title+'</h3>'+
+              '<p id="description">'+data[i].description+'</p>'+
+              '<h4 id="date">'+data[i].date+' '+data[i].month+' | '+data[i].startTime + ':00 - '+data[i].endTime+':00 </h4>'+
+            '</div>'+
+        '</div>');
+    }
+});
 });
 
 $$(document).on('click', '.panel .timetable-link', function searchLink() {
@@ -155,11 +207,6 @@ $$(document).on('click', '.panel .support-link', function searchLink() {
         '</div>');
     }
   });
-
-
-
-
-
 });
 
 

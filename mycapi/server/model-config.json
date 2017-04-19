@@ -16,5 +16,21 @@
   "support": {
     "dataSource": "azuresql",
     "public": true
+  },
+  "grade": {
+    "dataSource": "azuresql",
+    "public": true
+  },
+  "library": {
+    "dataSource": "azuresql",
+    "public": true
+  },
+  "timetable": {
+    "dataSource": "azuresql",
+    "public": true
+  },
+  "news": {
+    "dataSource": "azuresql",
+    "public": true
   }
 }
