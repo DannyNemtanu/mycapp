@@ -251,9 +251,9 @@ $$(document).on('click', '.panel .support-link', function searchLink() {
     for (var i = 0; i < data.length; i++) {
       $('.content-block #container1').append(
         '<div id="support-block'+i+'">'+
-        '<h2 class="support-selection">'
+        '<a href="#" class="support-selection button button5">'
         + data[i].supportName +
-        '</h2>' +
+        '</a>' +
         '<div class="support-info">' +
         '<h3>Support Type:' + data[i].desc + '</h3>' +
         '<h3>Contact Number:' + data[i].contactNum + '</h3>' +
