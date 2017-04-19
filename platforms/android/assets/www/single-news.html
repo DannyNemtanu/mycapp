@@ -1,0 +1,40 @@
+
+  <!-- Dynamic navbar for iOS theme -->
+  {{#if @global.ios}}
+  <div class="navbar">
+    <div class="navbar-inner">
+      <div class="left">
+        <a href="#" class="link icon-only open-panel"><i class="fa fa-bars"></i></a>
+      </div>
+      <div class="center sliding">Favorites</div>
+    </div>
+  </div>
+  {{/if}}
+
+  <div class="page" data-page="news">
+      <!-- Fixed navbar for Material theme -->
+      {{#if @global.material}}
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="left">
+              <a href="#" class="link icon-only open-panel"><i class="fa fa-bars"></i></a>
+            </div>
+          <div class="center sliding single-page-sliding"></div>
+        </div>
+      </div>
+      {{/if}}
+
+      <div class="page-content">
+        <div class="content-block single-page">
+          <div class="singlepage-news">
+            <div class="single-header"><img src="http://lorempixel.com/400/200" alt=""></div>
+            <h1 id="title">Title</h1>
+            <p id="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores unde eum, est, voluptatibus animi impedit? Nam, aperiam eaque, labore, reiciendis explicabo voluptate illo quo quidem voluptas molestias necessitatibus rerum debitis.</p>
+            <div class="loc-time">
+              <div class="location">1st Mayoor Square</div>
+              <div class="time">15:00 - 17:00</div>
+            </div>
+          </div>
+          <button id="reserve">Reserve Ticket</button>
+        </div>
+      </div>
