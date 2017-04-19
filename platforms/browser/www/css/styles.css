@@ -18,6 +18,7 @@ body {
   -ms-touch-action: pan-y;
 }
 .content-block{
+  margin-top: -56px;
   padding-bottom: 56px;
 }
 .content-block>div{
