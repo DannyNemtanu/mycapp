@@ -1,6 +1,18 @@
+<!-- Dynamic navbar for iOS theme -->
+{{#if @global.ios}}
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="left">
+      <a href="#" class="link icon-only open-panel"><i class="fa fa-bars"></i></a>
+    </div>
+    <div class="center sliding">Library</div>
+  </div>
+</div>
+{{/if}}
 
-  <!-- Dynamic navbar for iOS theme -->
-  {{#if @global.ios}}
+<div class="page" data-page="library">
+  <!-- Fixed navbar for Material theme -->
+  {{#if @global.material}}
   <div class="navbar">
     <div class="navbar-inner">
       <div class="left">
@@ -11,22 +23,95 @@
   </div>
   {{/if}}
 
-  <div class="page" data-page="library">
-      <!-- Fixed navbar for Material theme -->
-      {{#if @global.material}}
-        <div class="navbar">
-          <div class="navbar-inner">
-            <div class="left">
-              <a href="#" class="link icon-only open-panel"><i class="fa fa-bars"></i></a>
-            </div>
-          <div class="center sliding">Library</div>
-        </div>
-      </div>
-      {{/if}}
 
-      <div class="page-content">
-        <div class="content-block">
-          <h1>Welcome to Library Page</h1>
-        </div>
+<!-- try the modal box of the first line of book -->
+  <div class="page-content">
+  <div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'Library')">Library</button>
+  <button class="tablinks" onclick="openCity(event, 'My Books')">My Books</button>
+</div>
+    <div class="content-block">
+      <div id="Library" class="tabcontent">
+      <h1>Library</h1>
+      <div class="category" id="social-science-category">
+        <h3>Social Sciences</h3>
+      </div>
+      <div class="category" id="arts-and-recreation-category">
+        <h3>Arts and recreation</h3>
+      </div>
+      <div class="category" id="religion-category">
+        <h3>Religion</h3>
+      </div>
+      <div class="category" id="literature-category">
+        <h3>Literature</h3>
+      </div>
+      <div class="category" id="science-category">
+        <h3>Science</h3>
+      </div>
+      <div class="category" id="information-and-general-works-category">
+        <h3>information and general works</h3>
+      </div>
+      <div class="category" id="technology-and-applied-science-category">
+        <h3>Technology and applied science</h3>
+      </div>
+      <div class="category" id="philosophy-and-psychology-category">
+        <h3>Philosophy and psychology</h3>
+      </div>
+      <div class="category" id="computer-science-category">
+        <h3>Computer science</h3>
+      </div>
+      <div class="category" id="language-category">
+        <h3>Language</h3>
+      </div>
+      <div class="category" id="history-and-geography-category">
+        <h3>History and geography</h3>
       </div>
   </div>
+
+</div>
+
+<div id="My Books" class="tabcontent">
+<div class="content-block">
+   <h1>My Books</h1>
+     <table>
+      <tr>
+        <td><img src="img/Science.jpg" style="width:80px;height:100px;"></td>
+        <td>
+          <table>
+          <tr><td>bookID:539853072</td></tr>
+          <tr><td>title: nibh in quis</td></tr>
+          <tr><td>author: Jimmy Lawson</td></tr>
+         </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button id="myBtn" onclick="myFunction1()">Renew</button>
+        </td>
+      </tr>
+     </table>
+     <table>
+      <tr>
+        <td><img src="img/Literature.jpg" style="width:80px;height:100px;"></td>
+        <td>
+          <table>
+          <tr><td>bookID:593867461</td></tr>
+          <tr><td>title: vitae mattis</td></tr>
+          <tr><td>author: Angela Henderson</td></tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button id="myBtn" onclick="myFunction1()">Renew</button>
+        </td>
+      </tr>
+     </table>
+
+
+
+
+</div>
+</div>
+
+</div>

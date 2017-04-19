@@ -311,6 +311,35 @@ color: #efefef;
 }
 
 /*End Single New page*/
+/*End News Page*/
+
+/*Start Grades Page*/
+.grades-page ul{
+  list-style-type: none;
+padding: 0;
+margin: 0 auto;
+width: 100%;
+text-align: center;
+}
+.grades-page ul li{
+  background: #333;
+    color: #efefef;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 15px 0px;
+}
+.grades-page ul li #grade{
+  background: #fff;
+border-radius: 20px;
+width: 80%;
+margin: 0 auto;
+color: #333;
+padding: 10px;
+margin-bottom: 10px;
+}
+
+/*End Grades Page*/
+
 /*Timetable Page*/
 .page-timetable{
   padding-bottom: 75px;

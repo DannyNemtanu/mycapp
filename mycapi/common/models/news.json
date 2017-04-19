@@ -8,7 +8,7 @@
   "properties": {
     "newsId": {
       "type": "number",
-      "id" : true
+      "id": true
     },
     "title": {
       "type": "string"

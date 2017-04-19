@@ -1,1 +1,2 @@
 http://localhost:3002/api/supports?filter={"where":{"collegeID":1}}
+http://localhost:3002/api/grades?filter={"where":{"studentNumber": "+id+"}}

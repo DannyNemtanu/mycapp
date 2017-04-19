@@ -1,5 +1,5 @@
 {
-  "name": "grade",
+  "name": "grades",
   "base": "PersistedModel",
   "idInjection": false,
   "options": {
@@ -14,7 +14,7 @@
       "id": true
     },
     "grade": {
-      "type": "string"
+      "type": "number"
     }
   },
   "validations": [],

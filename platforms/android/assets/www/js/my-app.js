@@ -197,6 +197,28 @@ $$(document).on('click', '.panel .grades-link', function searchLink() {
       reload: true,
     });
   }
+  console.log("Grades Page Ready!");
+  $.ajax({
+    url: 'http://localhost:3002/api/grades?filter={"where":{"studentNumber": "x15534742"}}'
+  }).then(function (data) {
+    $('.grades-page .grades-list').empty();
+    for (var i = 0; i < data.length; i++) {
+      var check = data[i].grade;
+      if (check > 40) {
+        var pass = "Pass";
+        var credit = 5;
+      }else{
+        var pass = "Fail";
+        var credit = 0;
+      }
+      $('.grades-page .grades-list').append(
+        '<li>'+
+          '<h3>'+data[i].ClassName+'</h3>'+
+          '<p id="grade"> Credit:'+credit+' - Result:'+data[i].grade+' - Grade:'+pass+'</p>'+
+        '</li>'
+      );
+    }
+});
 });
 
 $$(document).on('click', '.panel .library-link', function searchLink() {
