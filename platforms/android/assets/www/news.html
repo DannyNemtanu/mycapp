@@ -1,0 +1,50 @@
+
+  <!-- Dynamic navbar for iOS theme -->
+  {{#if @global.ios}}
+  <div class="navbar">
+    <div class="navbar-inner">
+      <div class="left">
+        <a href="#" class="link icon-only open-panel"><i class="fa fa-bars"></i></a>
+      </div>
+      <div class="center sliding">Favorites</div>
+    </div>
+  </div>
+  {{/if}}
+
+  <div class="page" data-page="news">
+      <!-- Fixed navbar for Material theme -->
+      {{#if @global.material}}
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="left">
+              <a href="#" class="link icon-only open-panel"><i class="fa fa-bars"></i></a>
+            </div>
+          <div class="center sliding">News/Events</div>
+        </div>
+      </div>
+      {{/if}}
+
+      <div class="page-content">
+        <div class="content-block news-page">
+          <div class="newsheader">
+            <div class="swiper-container">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide slide-1"><h1>Cork bar defends policy after ID storm</h1></div>
+                    <div class="swiper-slide slide-2"><h1>Country music legend collapses during Late Late Show country special</h1></div>
+                    <div class="swiper-slide slide-3"><h1>44 dead as bus falls into gorge in Northern India</h1></div>
+                    <div class="swiper-slide slide-4"><h1>Can you name every Premier League club's youngest goalscorer?</h1></div>
+                    <div class="swiper-slide slide-5"><h1>Theresa May distances herself from ’Crush the saboteurs’ headline</h1></div>
+                    <div class="swiper-slide slide-6"><h1>Check down the back of the sofa - plenty of old money still out there</h1></div>
+
+                </div>
+            </div>
+          </div>
+          <div class="news-events">
+            <h1 id="eTitle">Events</h1>
+            <div class="event-items">
+
+            </div>
+      </div>
+  </div>
