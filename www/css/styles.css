@@ -409,18 +409,51 @@ margin-bottom: 10px;
 
 .support-info{
   display: none;
-  background-color:lightsalmon;
-  border: 1px dotted steelblue;
+  background-color:white;
 }
 
 #container1 .support-selection:nth-child(odd){
   border:2px solid steelblue;
+  border-radius: 20px;
 }
+
+/****** buttons' style starts here ******/
+.button {
+  display: inline-block;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: inherit;
+  border: 3px solid;
+  margin: 20px;
+  width: 280px;  }
+
+.button:hover {
+  -webkit-transition: 200ms ease-in;
+     -moz-transition: 200ms ease-in;
+       -o-transition: 200ms ease-in;
+          transition: 200ms ease-in; }
+
+/****** green buttons ******/
+
+.button5 {
+  background-color: rgb(124,191,66)!important;
+  border-color: rgb(124,191,66)!important;
+  color: rgb(255,255,255)!important; }
+
+
+.button5:hover {
+  background-color: rgba(255,255,255,0)!important;
+  border-color: rgb(124,191,66)!important;
+  color: rgb(124,191,66)!important; }
+
+
 
 
 /*Start Library*/
 .libraryPage{
   margin-top: 56px;
+  
 }
 .libraryPage .tab{
   height: 50px;
