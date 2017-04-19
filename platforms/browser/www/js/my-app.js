@@ -94,7 +94,7 @@ $$(document).on('deviceready', function deviceIsReady() {
                 '<div id="eitem-img-bottom">'+data[i].date+'</div>'+
               '</div>'+
               '<div class="eitem-desc">'+
-                '<h3 id="title">'+data[i].title+'</h3>'+
+                '<h3 id="title">'+(data[i].title).toUpperCase()+'</h3>'+
                 '<p id="description">'+data[i].description+'</p>'+
                 '<h4 id="date">'+data[i].date+' '+data[i].month+' | '+data[i].startTime + ':00 - '+data[i].endTime+':00 </h4>'+
               '</div>'+
@@ -115,10 +115,15 @@ $$(document).on('click', '.single-news', function searchLink() {
   }).then(function (data) {
     console.log(data[id].title);
     $('.singlepage-news').empty();
+      $('.single-page-sliding').append((data[id].title).toUpperCase());
       $('.singlepage-news').append(
         '<div class="single-header"><img src="http://loremflickr.com/320/240?random='+id+'" alt=""></div>'+
-        '<h1 id="title">'+data[id].title+'</h1>'+
-        '<p id="description">'+data[id].description+'</p>'
+        '<h1 id="title">'+(data[id].title).toUpperCase()+'</h1>'+
+        '<p id="description">'+data[id].description+'</p>'+
+        '<div class="loc-time">'+
+          '<div class="location">'+data[id].location+'</div>'+
+          '<div class="time">'+data[id].startTime+':00 - '+data[id].endTime+':00 </div>'+
+        '</div>'
       );
     });
 });
@@ -159,7 +164,7 @@ $$(document).on('click', '.panel .news-link', function searchLink() {
                   '<div id="eitem-img-bottom">'+data[i].date+'</div>'+
                 '</div>'+
                 '<div class="eitem-desc">'+
-                  '<h3 id="title">'+data[i].title+'</h3>'+
+                  '<h3 id="title">'+(data[i].title).toUpperCase()+'</h3>'+
                   '<p id="description">'+data[i].description+'</p>'+
                   '<h4 id="date">'+data[i].date+' '+data[i].month+' | '+data[i].startTime + ':00 - '+data[i].endTime+':00 </h4>'+
                 '</div>'+
