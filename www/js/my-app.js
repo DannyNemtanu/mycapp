@@ -87,21 +87,46 @@ $$(document).on('deviceready', function deviceIsReady() {
     $('.news-events .event-items').empty();
     for (var i = 0; i < data.length; i++) {
       $('.news-events .event-items').append(
-        '<div class="eitem">'+
-            '<div class="eitem-img">'+
-              '<div id="eitem-img-top">'+data[i].month+'</div>'+
-              '<div id="eitem-img-bottom">'+data[i].date+'</div>'+
-            '</div>'+
-            '<div class="eitem-desc">'+
-              '<h3 id="title">'+data[i].title+'</h3>'+
-              '<p id="description">'+data[i].description+'</p>'+
-              '<h4 id="date">'+data[i].date+' '+data[i].month+' | '+data[i].startTime + ':00 - '+data[i].endTime+':00 </h4>'+
-            '</div>'+
-        '</div>');
+        '<a id="'+i+'" class="single-news" href="single-news.html">'+
+          '<div class="eitem eitem-'+i+'">'+
+              '<div class="eitem-img">'+
+                '<div id="eitem-img-top">'+data[i].month+'</div>'+
+                '<div id="eitem-img-bottom">'+data[i].date+'</div>'+
+              '</div>'+
+              '<div class="eitem-desc">'+
+                '<h3 id="title">'+data[i].title+'</h3>'+
+                '<p id="description">'+data[i].description+'</p>'+
+                '<h4 id="date">'+data[i].date+' '+data[i].month+' | '+data[i].startTime + ':00 - '+data[i].endTime+':00 </h4>'+
+              '</div>'+
+          '</div>'+
+        '</a>'
+      );
     }
 });
 });
 
+// Link To Single News Page
+$$(document).on('click', '.single-news', function searchLink() {
+  console.log("clicked"+this.id);
+  var id = this.id;
+  console.log(id);
+  $.ajax({
+    url: 'http://localhost:3002/api/news?filter={"where":{"collegeID":1}}'
+  }).then(function (data) {
+    console.log(data[id].title);
+    $('.singlepage-news').empty();
+      $('.singlepage-news').append(
+        '<div class="single-header"><img src="http://loremflickr.com/320/240?random='+id+'" alt=""></div>'+
+        '<h1 id="title">'+data[id].title+'</h1>'+
+        '<p id="description">'+data[id].description+'</p>'
+      );
+    });
+});
+
+// Ticket Reserved
+$$(document).on('click', '.single-page #reserve', function searchLink() {
+  alert("Ticket Reseverd");
+});
 
 $$(document).on('click', '.panel .news-link', function searchLink() {
   // Only change route if not already on the index
@@ -121,25 +146,28 @@ $$(document).on('click', '.panel .news-link', function searchLink() {
       direction: 'vertical',
       loop: true
     });
-  $.ajax({
-    url: 'http://localhost:3002/api/news?filter={"where":{"collegeID":1}}'
-  }).then(function (data) {
-    $('.news-events .event-items').empty();
-    for (var i = 0; i < data.length; i++) {
-      $('.news-events .event-items').append(
-        '<div class="eitem">'+
-            '<div class="eitem-img">'+
-              '<div id="eitem-img-top">'+data[i].month+'</div>'+
-              '<div id="eitem-img-bottom">'+data[i].date+'</div>'+
+    $.ajax({
+      url: 'http://localhost:3002/api/news?filter={"where":{"collegeID":1}}'
+    }).then(function (data) {
+      $('.news-events .event-items').empty();
+      for (var i = 0; i < data.length; i++) {
+        $('.news-events .event-items').append(
+          '<a id="'+i+'" class="single-news" href="single-news.html">'+
+            '<div class="eitem eitem-'+i+'">'+
+                '<div class="eitem-img">'+
+                  '<div id="eitem-img-top">'+data[i].month+'</div>'+
+                  '<div id="eitem-img-bottom">'+data[i].date+'</div>'+
+                '</div>'+
+                '<div class="eitem-desc">'+
+                  '<h3 id="title">'+data[i].title+'</h3>'+
+                  '<p id="description">'+data[i].description+'</p>'+
+                  '<h4 id="date">'+data[i].date+' '+data[i].month+' | '+data[i].startTime + ':00 - '+data[i].endTime+':00 </h4>'+
+                '</div>'+
             '</div>'+
-            '<div class="eitem-desc">'+
-              '<h3 id="title">'+data[i].title+'</h3>'+
-              '<p id="description">'+data[i].description+'</p>'+
-              '<h4 id="date">'+data[i].date+' '+data[i].month+' | '+data[i].startTime + ':00 - '+data[i].endTime+':00 </h4>'+
-            '</div>'+
-        '</div>');
-    }
-});
+          '</a>'
+        );
+      }
+  });
 });
 
 $$(document).on('click', '.panel .timetable-link', function searchLink() {

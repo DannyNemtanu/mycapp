@@ -219,6 +219,7 @@ body {
 .eitem{
   height: 160px;
   margin-top: 20px;
+  color: #333;
 }
 
 .eitem-img{
@@ -254,6 +255,51 @@ body {
   overflow: hidden;
 }
 
+
+/*Single new Page*/
+.single-page{
+  text-align: center;
+  padding: 0;
+}
+.single-page #title{
+  color:#333;
+}
+.single-page #description{
+  color: #ccc;
+}
+.single-page button{
+  position: absolute;
+  font-size: 20px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #333;
+  border: none;
+  color: #efefef;
+}
+.single-header{
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.single-header img{
+  width: 100%;
+  height: 100%;
+}
+.loc-time{
+  position: absolute;
+  bottom: 50px;
+  font-size: 20px;
+  text-align: center;
+  width: 100%;
+  line-height: 40px;
+  padding: 5px;
+  background-color: #efefef;
+}
+
+/*End Single New page*/
 /*Timetable Page*/
 .page-timetable{
   padding-bottom: 75px;
