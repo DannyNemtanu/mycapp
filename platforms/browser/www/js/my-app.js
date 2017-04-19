@@ -74,7 +74,13 @@ var mainView = myApp.addView('.view-main', {
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function deviceIsReady() {
   console.log('Device is ready!');
+  // News Page
   console.log("News Page Ready");
+  var mySwiper = new Swiper ('.swiper-container', {
+      // Optional parameters
+      direction: 'vertical',
+      loop: true
+    });
   $.ajax({
     url: 'http://localhost:3002/api/news?filter={"where":{"collegeID":1}}'
   }).then(function (data) {
@@ -108,7 +114,13 @@ $$(document).on('click', '.panel .news-link', function searchLink() {
       reload: true,
     });
   }
+  // News Page
   console.log("News Page Ready");
+  var mySwiper = new Swiper ('.swiper-container', {
+      // Optional parameters
+      direction: 'vertical',
+      loop: true
+    });
   $.ajax({
     url: 'http://localhost:3002/api/news?filter={"where":{"collegeID":1}}'
   }).then(function (data) {

@@ -16,8 +16,6 @@ body {
 .page-content {
   touch-action: pan-y;
   -ms-touch-action: pan-y;
-  margin-top: 56px;
-
 }
 .content-block{
   padding-bottom: 56px;
@@ -152,13 +150,61 @@ body {
 }
 
 /*News Page Styling*/
-.news-content{
+.news-page{
   margin: 0;
   padding: 0;
 }
-.news-content .content-block{
-  padding: 0;
+.news-page .eitem{
+  padding: 0px 10px;
 }
+
+/*Swipper*/
+.swiper-container {
+    width: 100%;
+    height: 300px;
+}
+.swiper-slide h1{
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  padding: 10px;
+  color:#fff;
+  background-color: #333;
+  opacity: .9;
+  font-size: 20px;
+}
+.slide-1{
+  background-image: url('../img/cork.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.slide-2{
+  background-image: url('../img/show.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.slide-3{
+  background-image: url('../img/cork.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.slide-4{
+  background-image: url('../img/footbal.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.slide-5{
+  background-image: url('../img/theresamay.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.slide-6{
+  background-image: url('../img/JohnBruton.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
 .newsheader{
   height: 300px;
   background-color: #333;
