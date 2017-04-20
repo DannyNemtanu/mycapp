@@ -18,6 +18,12 @@
     "courseCode": {
       "type": "string",
       "id": true
+    },
+    "timeStart": {
+      "type": "string"
+    },
+    "timeEnd": {
+      "type": "string"
     }
   },
   "validations": [],
