@@ -187,7 +187,7 @@ $$(document).on('click', '.panel .timetable-link', function searchLink() {
   }
 
   $(document).on('change', 'select', function openTimeTable() {
-    $('#timetable-container').empty();
+    $('.page-on-center #timetable-container').empty();
     var code = $(this).val();
 
 
@@ -218,7 +218,7 @@ $$(document).on('click', '.panel .timetable-link', function searchLink() {
                     +'<p>'+data[i].className+'</p></li>'
           }
         }
-             $('#timetable-container').append('<ul class="timeline">'+monday+tuesday+wednesday+thursday+'</ul>');
+             $('.page-on-center #timetable-container').append('<ul class="timeline">'+monday+tuesday+wednesday+thursday+'</ul>');
       });
       
  
@@ -251,7 +251,7 @@ $$(document).on('click', '.panel .timetable-link', function searchLink() {
                     +'<p>'+data[i].className+'</p></li>'
           }
         }
-             $('#timetable-container').append('<ul class="timeline">'+monday+tuesday+wednesday+thursday+'</ul>');
+             $('.page-on-center #timetable-container').append('<ul class="timeline">'+monday+tuesday+wednesday+thursday+'</ul>');
       });
 
     }
@@ -329,7 +329,7 @@ $$(document).on('click', '.panel .support-link', function searchLink() {
     $('.content-block #container1').empty();
     for (var i = 0; i < data.length; i++) {
       $('.content-block #container1').append(
-        '<div id="support-block'+i+'">'+
+        '<div id="support-block' + i + '">' +
         '<a href="#" class="support-selection button button5">'
         + data[i].supportName +
         '</a>' +

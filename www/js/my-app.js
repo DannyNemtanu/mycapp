@@ -187,7 +187,7 @@ $$(document).on('click', '.panel .timetable-link', function searchLink() {
   }
 
   $(document).on('change', 'select', function openTimeTable() {
-    $('#timetable-container').empty();
+    $('.page-on-center #timetable-container').empty();
     var code = $(this).val();
 
 
@@ -218,7 +218,7 @@ $$(document).on('click', '.panel .timetable-link', function searchLink() {
                     +'<p>'+data[i].className+'</p></li>'
           }
         }
-             $('#timetable-container').append('<ul class="timeline">'+monday+tuesday+wednesday+thursday+'</ul>');
+             $('.page-on-center #timetable-container').append('<ul class="timeline">'+monday+tuesday+wednesday+thursday+'</ul>');
       });
       
  
@@ -251,7 +251,7 @@ $$(document).on('click', '.panel .timetable-link', function searchLink() {
                     +'<p>'+data[i].className+'</p></li>'
           }
         }
-             $('#timetable-container').append('<ul class="timeline">'+monday+tuesday+wednesday+thursday+'</ul>');
+             $('.page-on-center #timetable-container').append('<ul class="timeline">'+monday+tuesday+wednesday+thursday+'</ul>');
       });
 
     }
