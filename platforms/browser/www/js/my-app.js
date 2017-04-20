@@ -76,38 +76,38 @@ $$(document).on('deviceready', function deviceIsReady() {
   console.log('Device is ready!');
   // News Page
   console.log("News Page Ready");
-  var mySwiper = new Swiper ('.swiper-container', {
-      // Optional parameters
-      direction: 'vertical',
-      loop: true
-    });
+  var mySwiper = new Swiper('.swiper-container', {
+    // Optional parameters
+    direction: 'vertical',
+    loop: true
+  });
   $.ajax({
     url: 'http://localhost:3002/api/news?filter={"where":{"collegeID":1}}'
   }).then(function (data) {
     $('.news-events .event-items').empty();
     for (var i = 0; i < data.length; i++) {
       $('.news-events .event-items').append(
-        '<a id="'+i+'" class="single-news" href="single-news.html">'+
-          '<div class="eitem eitem-'+i+'">'+
-              '<div class="eitem-img">'+
-                '<div id="eitem-img-top">'+data[i].month+'</div>'+
-                '<div id="eitem-img-bottom">'+data[i].date+'</div>'+
-              '</div>'+
-              '<div class="eitem-desc">'+
-                '<h3 id="title">'+(data[i].title).toUpperCase()+'</h3>'+
-                '<p id="description">'+data[i].description+'</p>'+
-                '<h4 id="date">'+data[i].date+' '+data[i].month+' | '+data[i].startTime + ':00 - '+data[i].endTime+':00 </h4>'+
-              '</div>'+
-          '</div>'+
+        '<a id="' + i + '" class="single-news" href="single-news.html">' +
+        '<div class="eitem eitem-' + i + '">' +
+        '<div class="eitem-img">' +
+        '<div id="eitem-img-top">' + data[i].month + '</div>' +
+        '<div id="eitem-img-bottom">' + data[i].date + '</div>' +
+        '</div>' +
+        '<div class="eitem-desc">' +
+        '<h3 id="title">' + (data[i].title).toUpperCase() + '</h3>' +
+        '<p id="description">' + data[i].description + '</p>' +
+        '<h4 id="date">' + data[i].date + ' ' + data[i].month + ' | ' + data[i].startTime + ':00 - ' + data[i].endTime + ':00 </h4>' +
+        '</div>' +
+        '</div>' +
         '</a>'
       );
     }
-});
+  });
 });
 
 // Link To Single News Page
 $$(document).on('click', '.single-news', function searchLink() {
-  console.log("clicked"+this.id);
+  console.log("clicked" + this.id);
   var id = this.id;
   console.log(id);
   $.ajax({
@@ -115,17 +115,17 @@ $$(document).on('click', '.single-news', function searchLink() {
   }).then(function (data) {
     console.log(data[id].title);
     $('.singlepage-news').empty();
-      $('.single-page-sliding').append((data[id].title).toUpperCase());
-      $('.singlepage-news').append(
-        '<div class="single-header"><img src="http://loremflickr.com/320/240?random='+id+'" alt=""></div>'+
-        '<h1 id="title">'+(data[id].title).toUpperCase()+'</h1>'+
-        '<p id="description">'+data[id].description+'</p>'+
-        '<div class="loc-time">'+
-          '<div class="location">'+data[id].location+'</div>'+
-          '<div class="time">'+data[id].startTime+':00 - '+data[id].endTime+':00 </div>'+
-        '</div>'
-      );
-    });
+    $('.single-page-sliding').append((data[id].title).toUpperCase());
+    $('.singlepage-news').append(
+      '<div class="single-header"><img src="http://loremflickr.com/320/240?random=' + id + '" alt=""></div>' +
+      '<h1 id="title">' + (data[id].title).toUpperCase() + '</h1>' +
+      '<p id="description">' + data[id].description + '</p>' +
+      '<div class="loc-time">' +
+      '<div class="location">' + data[id].location + '</div>' +
+      '<div class="time">' + data[id].startTime + ':00 - ' + data[id].endTime + ':00 </div>' +
+      '</div>'
+    );
+  });
 });
 
 // Ticket Reserved
@@ -146,32 +146,32 @@ $$(document).on('click', '.panel .news-link', function searchLink() {
   }
   // News Page
   console.log("News Page Ready");
-  var mySwiper = new Swiper ('.swiper-container', {
-      // Optional parameters
-      direction: 'vertical',
-      loop: true
-    });
-    $.ajax({
-      url: 'http://localhost:3002/api/news?filter={"where":{"collegeID":1}}'
-    }).then(function (data) {
-      $('.news-events .event-items').empty();
-      for (var i = 0; i < data.length; i++) {
-        $('.news-events .event-items').append(
-          '<a id="'+i+'" class="single-news" href="single-news.html">'+
-            '<div class="eitem eitem-'+i+'">'+
-                '<div class="eitem-img">'+
-                  '<div id="eitem-img-top">'+data[i].month+'</div>'+
-                  '<div id="eitem-img-bottom">'+data[i].date+'</div>'+
-                '</div>'+
-                '<div class="eitem-desc">'+
-                  '<h3 id="title">'+(data[i].title).toUpperCase()+'</h3>'+
-                  '<p id="description">'+data[i].description+'</p>'+
-                  '<h4 id="date">'+data[i].date+' '+data[i].month+' | '+data[i].startTime + ':00 - '+data[i].endTime+':00 </h4>'+
-                '</div>'+
-            '</div>'+
-          '</a>'
-        );
-      }
+  var mySwiper = new Swiper('.swiper-container', {
+    // Optional parameters
+    direction: 'vertical',
+    loop: true
+  });
+  $.ajax({
+    url: 'http://localhost:3002/api/news?filter={"where":{"collegeID":1}}'
+  }).then(function (data) {
+    $('.news-events .event-items').empty();
+    for (var i = 0; i < data.length; i++) {
+      $('.news-events .event-items').append(
+        '<a id="' + i + '" class="single-news" href="single-news.html">' +
+        '<div class="eitem eitem-' + i + '">' +
+        '<div class="eitem-img">' +
+        '<div id="eitem-img-top">' + data[i].month + '</div>' +
+        '<div id="eitem-img-bottom">' + data[i].date + '</div>' +
+        '</div>' +
+        '<div class="eitem-desc">' +
+        '<h3 id="title">' + (data[i].title).toUpperCase() + '</h3>' +
+        '<p id="description">' + data[i].description + '</p>' +
+        '<h4 id="date">' + data[i].date + ' ' + data[i].month + ' | ' + data[i].startTime + ':00 - ' + data[i].endTime + ':00 </h4>' +
+        '</div>' +
+        '</div>' +
+        '</a>'
+      );
+    }
   });
 });
 
@@ -185,7 +185,86 @@ $$(document).on('click', '.panel .timetable-link', function searchLink() {
       reload: true,
     });
   }
+
+  $(document).on('change', 'select', function openTimeTable() {
+    $('.page-on-center #timetable-container').empty();
+    var code = $(this).val();
+
+
+    if (code === '9') {
+      var monday='';
+      var tuesday="";
+      var wednesday="";
+      var thursday = "";
+      $.ajax({
+        url: 'http://localhost:3002/api/timetables?filter={"where":{"courseCode":9}}'
+      }).then(function (data) {
+        for (let i = 0; i < data.length; i++) {
+          if (data[i].she_Day === 'Monday') {
+            monday+='<li class="event" data-date="'+data[i].timeStart.substring(11,16)+'-'+data[i].timeEnd.substring(11,16)+'">'
+                    +'<h3>'+data[i].she_Day+'</h3>'
+                    +'<p>'+data[i].className+'</p></li>'       
+          } else if (data[i].she_Day === 'Tuesday') {
+            tuesday+='<li class="event" data-date="'+data[i].timeStart.substring(11,16)+'-'+data[i].timeEnd.substring(11,16)+'">'
+                    +'<h3>'+data[i].she_Day+'</h3>'
+                    +'<p>'+data[i].className+'</p></li>'
+          } else if (data[i].she_Day === 'Wednesday') {
+            wednesday+='<li class="event" data-date="'+data[i].timeStart.substring(11,16)+'-'+data[i].timeEnd.substring(11,16)+'">'
+                    +'<h3>'+data[i].she_Day+'</h3>'
+                    +'<p>'+data[i].className+'</p></li>'
+          } else if (data[i].she_Day === 'Thursday') {
+            thursday+='<li class="event" data-date="'+data[i].timeStart.substring(11,16)+'-'+data[i].timeEnd.substring(11,16)+'">'
+                    +'<h3>'+data[i].she_Day+'</h3>'
+                    +'<p>'+data[i].className+'</p></li>'
+          }
+        }
+             $('.page-on-center #timetable-container').append('<ul class="timeline">'+monday+tuesday+wednesday+thursday+'</ul>');
+      });
+      
+ 
+
+    } else if (code === '31') {
+
+      var monday='';
+      var tuesday="";
+      var wednesday="";
+      var thursday = "";
+      $.ajax({
+        url: 'http://localhost:3002/api/timetables?filter={"where":{"courseCode":31}}'
+      }).then(function (data) {
+        for (let i = 0; i < data.length; i++) {
+          if (data[i].she_Day === 'Monday') {
+            monday+='<li class="event" data-date="'+data[i].timeStart.substring(11,16)+'-'+data[i].timeEnd.substring(11,16)+'">'
+                    +'<h3>'+data[i].she_Day+'</h3>'
+                    +'<p>'+data[i].className+'</p></li>'       
+          } else if (data[i].she_Day === 'Tuesday') {
+            tuesday+='<li class="event" data-date="'+data[i].timeStart.substring(11,16)+'-'+data[i].timeEnd.substring(11,16)+'">'
+                    +'<h3>'+data[i].she_Day+'</h3>'
+                    +'<p>'+data[i].className+'</p></li>'
+          } else if (data[i].she_Day === 'Wednesday') {
+            wednesday+='<li class="event" data-date="'+data[i].timeStart.substring(11,16)+'-'+data[i].timeEnd.substring(11,16)+'">'
+                    +'<h3>'+data[i].she_Day+'</h3>'
+                    +'<p>'+data[i].className+'</p></li>'
+          } else if (data[i].she_Day === 'Thursday') {
+            thursday+='<li class="event" data-date="'+data[i].timeStart.substring(11,16)+'-'+data[i].timeEnd.substring(11,16)+'">'
+                    +'<h3>'+data[i].she_Day+'</h3>'
+                    +'<p>'+data[i].className+'</p></li>'
+          }
+        }
+             $('.page-on-center #timetable-container').append('<ul class="timeline">'+monday+tuesday+wednesday+thursday+'</ul>');
+      });
+
+    }
+
+
+  });
+
 });
+
+
+
+
+
 
 $$(document).on('click', '.panel .grades-link', function searchLink() {
   // @TODO fetch the favorites (if any) from localStorage
@@ -207,18 +286,18 @@ $$(document).on('click', '.panel .grades-link', function searchLink() {
       if (check > 40) {
         var pass = "Pass";
         var credit = 5;
-      }else{
+      } else {
         var pass = "Fail";
         var credit = 0;
       }
       $('.grades-page .grades-list').append(
-        '<li>'+
-          '<h3>'+data[i].ClassName+'</h3>'+
-          '<p id="grade"> Credit:'+credit+' - Result:'+data[i].grade+' - Grade:'+pass+'</p>'+
+        '<li>' +
+        '<h3>' + data[i].ClassName + '</h3>' +
+        '<p id="grade"> Credit:' + credit + ' - Result:' + data[i].grade + ' - Grade:' + pass + '</p>' +
         '</li>'
       );
     }
-});
+  });
 });
 
 $$(document).on('click', '.panel .library-link', function searchLink() {
@@ -250,7 +329,7 @@ $$(document).on('click', '.panel .support-link', function searchLink() {
     $('.content-block #container1').empty();
     for (var i = 0; i < data.length; i++) {
       $('.content-block #container1').append(
-        '<div id="support-block'+i+'">'+
+        '<div id="support-block' + i + '">' +
         '<a href="#" class="support-selection button button5">'
         + data[i].supportName +
         '</a>' +

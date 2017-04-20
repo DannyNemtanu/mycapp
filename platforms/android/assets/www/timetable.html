@@ -1,4 +1,3 @@
-
 <!-- Dynamic navbar for iOS theme -->
 {{#if @global.ios}}
 <div class="navbar">
@@ -12,144 +11,30 @@
 {{/if}}
 
 <div class="page" data-page="timetable">
-    <!-- Fixed navbar for Material theme -->
-    {{#if @global.material}}
-      <div class="navbar">
-        <div class="navbar-inner">
-          <div class="left">
-            <a href="#" class="link icon-only open-panel"><i class="fa fa-bars"></i></a>
-          </div>
-        <div class="center sliding">Timetable</div>
+  <!-- Fixed navbar for Material theme -->
+  {{#if @global.material}}
+  <div class="navbar">
+    <div class="navbar-inner">
+      <div class="left">
+        <a href="#" class="link icon-only open-panel"><i class="fa fa-bars"></i></a>
       </div>
+      <div class="center sliding">Timetable</div>
     </div>
-    {{/if}}
+  </div>
+  {{/if}}
 
-    <div class="page-content page-timetable">
-      <div class="timetable-section" style="margin-top: 80px;">
-        <div class="day">
-          <div class="title">Monday</div>
-          <div class="info">
-            <div class="info-sec">
-              <div class="class-name">Software Engineering</div>
-              <div class="class-detail">SCR3 11:00 - 13:00</div>
-            </div>
-            <div class="info-sec">
-              <div class="class-name">Software Engineering</div>
-              <div class="class-detail">SCR3 11:00 - 13:00</div>
-            </div>
-            <div class="info-sec">
-              <div class="class-name">Software Engineering</div>
-              <div class="class-detail">SCR3 11:00 - 13:00</div>
-            </div>
-            <div class="info-sec">
-              <a href="timetable-single.html" class="btn">More Info...</a>
-            </div>
-          </div>
-        </div>
-        <div class="day">
-          <div class="title">Tuesday</div>
-          <div class="info">
-            <div class="info-sec">
-              <div class="class-name">Software Engineering</div>
-              <div class="class-detail">SCR3 11:00 - 13:00</div>
-            </div>
-            <div class="info-sec">
-              <div class="class-name">Software Engineering</div>
-              <div class="class-detail">SCR3 11:00 - 13:00</div>
-            </div>
-            <div class="info-sec">
-              <div class="class-name">Software Engineering</div>
-              <div class="class-detail">SCR3 11:00 - 13:00</div>
-            </div>
-            <div class="info-sec">
-              <a href="#" class="btn">More Info...</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="timetable-section">
-        <div class="day">
-          <div class="title">Monday</div>
-          <div class="info">
-            <div class="info-sec">
-              <div class="class-name">Software Engineering</div>
-              <div class="class-detail">SCR3 11:00 - 13:00</div>
-            </div>
-            <div class="info-sec">
-              <div class="class-name">Software Engineering</div>
-              <div class="class-detail">SCR3 11:00 - 13:00</div>
-            </div>
-            <div class="info-sec">
-              <div class="class-name">Software Engineering</div>
-              <div class="class-detail">SCR3 11:00 - 13:00</div>
-            </div>
-            <div class="info-sec">
-              <a href="#" class="btn">More Info...</a>
-            </div>
-          </div>
-        </div>
-        <div class="day">
-          <div class="title">Tuesday</div>
-          <div class="info">
-            <div class="info-sec">
-              <div class="class-name">Software Engineering</div>
-              <div class="class-detail">SCR3 11:00 - 13:00</div>
-            </div>
-            <div class="info-sec">
-              <div class="class-name">Software Engineering</div>
-              <div class="class-detail">SCR3 11:00 - 13:00</div>
-            </div>
-            <div class="info-sec">
-              <div class="class-name">Software Engineering</div>
-              <div class="class-detail">SCR3 11:00 - 13:00</div>
-            </div>
-            <div class="info-sec">
-              <a href="#" class="btn">More Info...</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="timetable-section">
-        <div class="day">
-          <div class="title">Monday</div>
-          <div class="info">
-            <div class="info-sec">
-              <div class="class-name">Software Engineering</div>
-              <div class="class-detail">SCR3 11:00 - 13:00</div>
-            </div>
-            <div class="info-sec">
-              <div class="class-name">Software Engineering</div>
-              <div class="class-detail">SCR3 11:00 - 13:00</div>
-            </div>
-            <div class="info-sec">
-              <div class="class-name">Software Engineering</div>
-              <div class="class-detail">SCR3 11:00 - 13:00</div>
-            </div>
-            <div class="info-sec">
-              <a href="#" class="btn">More Info...</a>
-            </div>
-          </div>
-        </div>
-        <div class="day">
-          <div class="title">Tuesday</div>
-          <div class="info">
-            <div class="info-sec">
-              <div class="class-name">Software Engineering</div>
-              <div class="class-detail">SCR3 11:00 - 13:00</div>
-            </div>
-            <div class="info-sec">
-              <div class="class-name">Software Engineering</div>
-              <div class="class-detail">SCR3 11:00 - 13:00</div>
-            </div>
-            <div class="info-sec">
-              <div class="class-name">Software Engineering</div>
-              <div class="class-detail">SCR3 11:00 - 13:00</div>
-            </div>
-            <div class="info-sec">
-              <a href="#" class="btn">More Info...</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+  <div class="selection-container" style="margin-top:74px;text-align: center">
+    <p id="selction-title">Please Select your course</p>
+    <select>
+     <option disabled selected>Please Select</option>
+     <option value=9 id="id9">Hsc in Computing</option>
+    <option value=31 id="id31">BSc in Computing</option>
+    </select>
+
+
+
+  </div>
+  <div id="timetable-container" style="overflow: auto;
+                                    overflow-y: scroll; overflow-x: hidden; height: 550px;">
+</div>
 </div>
