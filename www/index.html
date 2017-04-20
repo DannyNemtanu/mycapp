@@ -1,127 +1,47 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <!--
-    Customize this policy to fit your own app's needs. For more guidance, see:
-      https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
-    Some notes:
-      * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-      * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-      * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-        * Enable inline JS: add 'unsafe-inline' to default-src
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link rel="manifest" href="manifest.json">
+
+    <!-- un-comment this code to enable service worker
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('service worker installed'))
+          .catch(err => console.log('Error', err));
+      }
+    </script>-->
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+      <link href="css/styles.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
     -->
-  <!-- Removing 'unsafe-eval'. If needed, I will figure out a way around it -->
-  <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'" />
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+        <script src="js/controllers.js"></script>
+  </head>
+  <body ng-app="starter">
 
 
-  <!-- Required meta tags-->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="format-detection" content="telephone=no">
-  <meta name="msapplication-tap-highlight" content="no">
-  <link rel="stylesheet" href="lib/font-awesome-4.5.0/css/font-awesome.min.css" />
-
-  <title>MYC App</title>
-</head>
-
-<body class="theme-green">
-  <!-- Status bar overlay for full screen mode (PhoneGap) -->
-  <div class="statusbar-overlay"></div>
-
-  <!-- Panels overlay-->
-  <div class="panel-overlay"></div>
-  <!-- Left panel with cover effect-->
-  <div class="panel panel-left panel-cover">
-    <!--<div class="content-block">-->
-    <div class="content-block-title">Your College App Menu</div>
-    <div class="list-block">
-      <ul>
-        <li>
-          <a href="timetable.html" class="timetable-link item-content list-panel-all close-panel item-link">
-            <div class="item-inner">
-              <div class="item-title">Timetable</div>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="grades.html" class="grades-link item-content list-panel-all close-panel item-link">
-            <div class="item-inner">
-              <div class="item-title">Grades</div>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="news.html" class="news-link item-content list-panel-all close-panel item-link">
-            <div class="item-inner">
-              <div class="item-title">News</div>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="library.html" class="library-link item-content list-panel-all close-panel item-link">
-            <div class="item-inner">
-              <div class="item-title">Library</div>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="support.html" class="support-link item-content list-panel-all close-panel item-link">
-            <div class="item-inner">
-              <div class="item-title">Support</div>
-            </div>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- Views -->
-  <div class="views">
-    <!-- Your main view, should have "view-main" class -->
-    <div class="view view-main">
-      <!-- Top <Navbar--></Navbar-->
-      <div class="navbar">
-        <div class="navbar-inner" data-page="index">
-          <div class="left">
-            <!--
-              Left link contains only icon - additional "icon-only" class
-              Additional "open-panel" class tells app to open panel when we click on this link
-            -->
-            <a href="#" class="link icon-only open-panel"><i class="fa fa-bars"></i></a>
-          </div>
-          <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
-          <div class="center sliding">Login</div>
-        </div>
-      </div>
-      <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
-      <div class="pages navbar-through toolbar-through">
-        <!-- Page, "data-page" contains page name -->
-        <div data-page="index" class="page">
-          <!-- Scrollable page content -->
-          <div class="page-content news-content">
-            <div class="content-block">
-
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
+<ion-nav-view >
+  <!-- Center content -->
+</ion-nav-view>
 
 
-  <script type="text/javascript" src="cordova.js"></script>
-  <script type="text/javascript" src="lib/MSOpenTech/winstore-jscompat.js"></script>
-  <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
-  <script type="text/javascript" src="js/init-styles.js"></script>
-  <script type="text/javascript" src="js/my-app.js"></script>
-  <script src="js/librarybook.js" charset="utf-8"></script>
-  <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-  <script src="js/swiper.jquery.min.js" charset="utf-8"></script>
-  <script type="text/javascript" src="js/myc.js"></script>
 
-</body>
-
+  </body>
 </html>
