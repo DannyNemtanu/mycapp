@@ -8,6 +8,5 @@ $$(document).on('click', '#container1 .support-selection', function openInfo(eve
         }
         //document.getElementById(event.target.parentNode.id).childNodes[1].style.display = "block";
         $('.content-block #container1 '+'#'+event.target.parentNode.id).children().css("display","inline-block");
-       
     }
 });
